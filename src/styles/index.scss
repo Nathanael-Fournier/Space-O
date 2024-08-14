@@ -1,6 +1,6 @@
 @use 'reset';
 @use 'variables' as v;
 
-// body {
-
-// }
+body {
+  background-color: v.$blackColor;
+}

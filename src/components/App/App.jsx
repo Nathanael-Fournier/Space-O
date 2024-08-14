@@ -1,7 +1,13 @@
 import './App.scss';
 
+import Navbar from './Navbar/Navbar';
+
 function App() {
-  return <div className="App">Space O</div>;
+  return (
+    <div className="App">
+      <Navbar />
+    </div>
+  );
 }
 
 export default App;

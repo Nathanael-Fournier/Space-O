@@ -1,0 +1,21 @@
+@use 'src/styles/variables';
+
+.navbar {
+  width: 100vw;
+  height: 10vh;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px variables.$whiteColor;
+  
+  .navbar-logo {
+    width: 35%;
+    margin-left: 5%;
+  }
+
+    .burger {
+      width: 10%;
+      margin-right: 5%;
+    }
+}
