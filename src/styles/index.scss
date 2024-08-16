@@ -1,6 +1,9 @@
 @use 'reset';
 @use 'variables' as v;
 
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 body {
   background-color: v.$blackColor;
 }

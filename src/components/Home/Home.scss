@@ -1,0 +1,48 @@
+@use 'src/styles/variables';
+
+
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.home-title {
+  margin-top: 10vh;
+  background: -webkit-linear-gradient(variables.$orangeColor, variables.$color1);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: variables.$mainFont;
+  padding: calc(variables.$homeMargin * 2) 0;
+  font-size: calc(variables.$homeFontSize * 2);
+  text-align: center;
+}
+
+.home-video {
+  width: 100%;
+  padding-right: 5vh;
+}
+
+.secondary-picture {
+  width: 75%;
+}
+
+.secondary-title {
+  background: -webkit-linear-gradient(variables.$orangeColor, variables.$color1);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: calc(variables.$homeFontSize * 1.5);
+  text-align: center;
+  margin-top: variables.$homeMargin;
+}
+
+.secondary-text {
+  font-family: variables.$secondaryFont;
+  color: rgb(200, 197, 197);
+  text-align: center;
+  margin: variables.$homeMargin calc(variables.$homeMargin * 2);
+  font-size: calc(variables.$homeFontSize / 1.25);
+}

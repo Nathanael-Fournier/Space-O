@@ -2,6 +2,11 @@
 Définition de variables Sass
 */
 
+// FONTS
+$mainFont: "Michroma", sans-serif;
+$secondaryFont: "Montserrat", sans-serif;
+
+// COLORS
 $orangeColor: #ED7507;
 
 $blackColor: #000000;
@@ -10,3 +15,9 @@ $whiteColor: #fff;
 $color1: #424141;
 $color2: #141313;
 $color3: #252525;
+
+// FONT SIZES
+$homeFontSize: 1rem;
+
+// MARGIN ETC
+$homeMargin: 1.2rem;
