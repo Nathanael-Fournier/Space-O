@@ -1,5 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import './Home.scss';
+import HomeParts from './HomeParts';
 
 const Home = () => {
   return (
@@ -11,20 +12,25 @@ const Home = () => {
           type="video/mp4"
         />
       </video>
-      {/* A transformer en sous-composants */}
-      <img
-        className="secondary-picture"
-        src="../src/assets/homePicture.png"
-        alt="Voyageurs qui vont vers une fusée"
-      />
-      <h2 className="secondary-title">
-        Voyager au dela des frontières terrestres
-      </h2>
-      <p className="secondary-text">
-        Nous sommes des rêveurs qui adorons voyager. Vous revez aussi de partir
+      <HomeParts
+        image="../src/assets/homePicture.png"
+        title="Voyager au dela des frontières terrestres"
+        text="Nous sommes des rêveurs qui adorons voyager. Vous revez aussi de partir
         dans l'espace ? Alors c'est le moment. Avec Space'O Agency, votre
-        destination phare est à seulement quelques clics de la réalité.
-      </p>
+        destination phare est à seulement quelques clics de la réalité."
+      />
+      <HomeParts
+        image="../src/assets/Saturne.png"
+        title="Nos Destinations"
+        text="Plusieurs destinations s'offrent à vous, des grandes étendues de Mars 
+        jusqu'au plages de roche blanche de Cérès."
+      />
+      <HomeParts
+        image="../src/assets/homeShip.png"
+        title="Nos Vaisseaux"
+        text="Une gamme complète de vaisseaux est à votre disposition, du cargo 
+        jusqu'aux vaisseaux de croisière, nous en avons pour tout les goûts."
+      />
     </div>
   );
 };

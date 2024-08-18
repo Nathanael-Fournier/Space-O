@@ -2,22 +2,47 @@
 
 .navbar {
   width: 100vw;
-  height: 10vh;
+  height: 20vh;
   position: fixed;
   top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: variables.$blackColor;
   border-bottom: solid 1px variables.$whiteColor;
-  
-  .navbar-logo {
-    width: 35%;
-    margin-left: 5%;
-  }
 
-    .burger {
-      width: 10%;
-      margin-right: 5%;
+  .navbar-first-part {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+    .navbar-logo {
+      width: 35%;
+      // margin-left: 5%;
     }
+
+      .navbar-second-part {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .navbar-link {
+        color: variables.$whiteColor;
+        font-family: variables.$secondaryFont;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        font-size: calc(variables.$homeFontSize / 1.25);
+        width: 20%;
+        height: 80%;
+        background-color: variables.$orangeColor;
+      }
+
+        .navbar-link-image {
+          width: 50%;
+        }
 }
