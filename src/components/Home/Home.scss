@@ -9,7 +9,7 @@
 }
 
 .home-title {
-  margin-top: 20vh;
+  margin: 0 5vh;
   background: -webkit-linear-gradient(variables.$orangeColor, variables.$color1);
   background-clip: border-box;
   -webkit-background-clip: text;
@@ -21,12 +21,27 @@
 }
 
 .home-video {
+  margin-top: 30vh;
   width: 100%;
   padding-right: 5vh;
 }
 
-.secondary-picture {
-  width: 75%;
+.first-image {
+  width: 55%;
+  margin-top: 5vh;
+  margin-bottom: 4vh;
+}
+
+.second-image {
+  width: 70%;
+  margin-top: 10vh;
+  margin-bottom: 3vh;
+}
+
+.third-image {
+  width: 65%;
+  margin-top: 10vh;
+  margin-left: 10%;
 }
 
 .secondary-title {
@@ -37,6 +52,7 @@
   font-size: calc(variables.$homeFontSize * 1.5);
   text-align: center;
   margin-top: variables.$homeMargin;
+  font-family: variables.$mainFont;
 }
 
 .secondary-text {
@@ -44,5 +60,19 @@
   color: rgb(200, 197, 197);
   text-align: center;
   margin: variables.$homeMargin calc(variables.$homeMargin * 2);
-  font-size: calc(variables.$homeFontSize / 1.25);
+  font-size: variables.$homeFontSize;
+}
+
+.home-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px variables.$whiteColor;
+  color: variables.$whiteColor;
+  font-family: variables.$secondaryFont;
+  background-color: variables.$color1;
+  width: 45%;
+  height: 6vh;
+  border-radius: 25px;
+  margin-top: 2vh;
 }
