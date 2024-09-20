@@ -1,4 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import { Link } from 'react-router-dom';
+
 import logo from '../../assets/SpaceO.png';
 import planete from '../../assets/svg/planete.svg';
 import vaisseau from '../../assets/svg/vaisseau.svg';
@@ -13,14 +14,14 @@ const Navbar = () => {
   return (
     <header>
       <nav className="navbar">
-        <div className="navbar-first-part">
+        <Link to="/" className="navbar-first-part">
           <img className="navbar-logo" src={logo} alt="Logo du site" />
-        </div>
+        </Link>
         <div className="navbar-second-part">
-          <NavbarLink image={planete} title="Planètes" />
-          <NavbarLink image={vaisseau} title="Vaisseaux" />
-          <NavbarLink image={devis} title="Devis" />
-          <NavbarLink image={login} title="Login" />
+          <NavbarLink link="/planetes" image={planete} title="Planètes" />
+          <NavbarLink link="/vaisseaux" image={vaisseau} title="Vaisseaux" />
+          <NavbarLink link="/devis" image={devis} title="Devis" />
+          <NavbarLink link="/mon-compte" image={login} title="Login" />
         </div>
       </nav>
     </header>

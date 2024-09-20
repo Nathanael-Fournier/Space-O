@@ -1,16 +1,23 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
+import { NavLink } from 'react-router-dom';
+
 import PropTypes from 'prop-types';
 
-const NavbarLink = ({ image, title }) => {
+const NavbarLink = ({ link, image, title }) => {
   return (
-    <a href="#" className="navbar-link">
+    <NavLink
+      to={link}
+      className={({ isActive }) =>
+        isActive ? 'navbar-link navbar-link--selected' : 'navbar-link'
+      }
+    >
       <img className="navbar-link-icon" src={image} alt="Icone de navigation" />
       {title}
-    </a>
+    </NavLink>
   );
 };
 
 NavbarLink.propTypes = {
+  link: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 };

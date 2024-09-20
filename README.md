@@ -3,7 +3,11 @@
 ## A faire
 
 - Responsive de la page d'accueil
-- Deployer avec surge
+
+- Pour le composant Ship :
+  . Créer une carte pour un vaisseau
+  . Faire le fetch sur les vaisseaux
+  . Utiliser les données dans la carte en faisant un map
 
 ## Pourquoi pas
 

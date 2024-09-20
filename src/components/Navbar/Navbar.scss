@@ -48,9 +48,13 @@ SOUS-COMPOSANT NAVBARLINK.JSX
           border-radius: calc(v.$homeFontSize / 4);
         }
 
-          .navbar-link-icon {
-            width: 40%;
+          .navbar-link--selected {
+            border: solid 1px v.$whiteColor;
           }
+
+            .navbar-link-icon {
+              width: 40%;
+            }
 }
 
 /*

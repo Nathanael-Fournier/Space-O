@@ -1,0 +1,8 @@
+@use '../../styles/variables' as v;
+
+  .ship-card {
+    border: solid 1px white;
+    height: 62.5vh;
+    width: 90%;
+    margin: 5vh auto;
+  }
