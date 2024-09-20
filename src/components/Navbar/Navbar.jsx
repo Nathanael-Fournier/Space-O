@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './Navbar.scss';
+
 import NavbarLink from './NavbarLink';
 
 const Navbar = () => {

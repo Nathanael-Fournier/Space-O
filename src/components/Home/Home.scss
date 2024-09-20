@@ -1,78 +1,67 @@
-@use 'src/styles/variables';
+@use '../../styles/variables' as v;
 
+/*
+COMPOSANT HOME.JSX
+*/
 
-.home-content {
+/*
+SOUS-COMPOSANT HOMEPARTS.JSX
+*/
+
+.home-parts-content {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
-}
-
-.home-title {
-  margin: 0 5vh;
-  background: -webkit-linear-gradient(variables.$orangeColor, variables.$color1);
-  background-clip: border-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-family: variables.$mainFont;
-  padding: calc(variables.$homeMargin * 2) 0;
-  font-size: calc(variables.$homeFontSize * 2);
-  text-align: center;
-}
-
-.home-video {
-  margin-top: 30vh;
-  width: 100%;
-  padding-right: 5vh;
 }
 
 .first-image {
   width: 55%;
-  margin-top: 5vh;
-  margin-bottom: 4vh;
+  margin: 10%;
 }
 
 .second-image {
   width: 70%;
   margin-top: 10vh;
-  margin-bottom: 3vh;
+  margin-bottom: 5vh;
 }
 
 .third-image {
   width: 65%;
-  margin-top: 10vh;
-  margin-left: 10%;
+  margin: 10vh 0 5vh 10%;
 }
 
 .secondary-title {
-  background: -webkit-linear-gradient(variables.$orangeColor, variables.$color1);
+  background: -webkit-linear-gradient(180deg, v.$orangeColor, v.$color1);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: calc(variables.$homeFontSize * 1.5);
+  font-size: calc(v.$homeFontSize * 1.5);
+  font-family: v.$mainFont;
   text-align: center;
-  margin-top: variables.$homeMargin;
-  font-family: variables.$mainFont;
 }
 
 .secondary-text {
-  font-family: variables.$secondaryFont;
-  color: rgb(200, 197, 197);
+  font-family: v.$secondaryFont;
+  font-size: v.$homeFontSize;
   text-align: center;
-  margin: variables.$homeMargin calc(variables.$homeMargin * 2);
-  font-size: variables.$homeFontSize;
+  color: rgb(200, 197, 197);
+  margin: 5%;
 }
 
 .home-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 1px variables.$whiteColor;
-  color: variables.$whiteColor;
-  font-family: variables.$secondaryFont;
-  background-color: variables.$color1;
+  border: solid 1px v.$whiteColor;
+  color: v.$whiteColor;
+  font-family: v.$secondaryFont;
+  background-color: v.$color1;
   width: 45%;
   height: 6vh;
   border-radius: 25px;
-  margin-top: 2vh;
+  margin: 5%;
 }
+
+/*
+RESPONSIVE
+*/

@@ -1,17 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import './Home.scss';
+
 import HomeParts from './HomeParts';
 
 const Home = () => {
   return (
-    <div className="home-content">
-      <video className="home-video" autoPlay loop muted playsInline>
-        <source
-          src="https://cdn.pixabay.com/video/2019/05/22/23882-338327769_large.mp4"
-          type="video/mp4"
-        />
-      </video>
-      <h1 className="home-title">Osez nous demander la Lune</h1>
+    <>
       <HomeParts
         name="first-image"
         image="../src/assets/homePicture.png"
@@ -25,19 +19,23 @@ const Home = () => {
         name="second-image"
         image="../src/assets/planets/Saturne.png"
         title="Nos Destinations"
-        text="Plusieurs destinations s'offrent à vous, des grandes étendues de Mars 
-        jusqu'au plages de roche blanche de Cérès."
+        text="Partez à l'aventure au-delà des étoiles ! Explorez les dunes rouges de Mars, 
+        flânez sur les plages blanches de Cérès, ou admirez les tempêtes de Jupiter. 
+        Chaque planète offre un monde d'émerveillements à découvrir. Quel sera votre 
+        prochain voyage spatial ?"
         button="Voir les Planètes"
       />
       <HomeParts
         name="third-image"
         image="../src/assets/homeShip.png"
         title="Nos Vaisseaux"
-        text="Une gamme complète de vaisseaux est à votre disposition, du cargo 
-        jusqu'aux vaisseaux de croisière, nous en avons pour tout les goûts."
+        text="Montez à bord de vaisseaux d'exception, guidés par des pilotes légendaires. 
+        Que vous choisissiez un cargo pour l'exploration ou un vaisseau de croisière 
+        pour un voyage tout confort, notre flotte vous garantit une expérience unique 
+        parmi les étoiles."
         button="Voir les Vaisseaux"
       />
-    </div>
+    </>
   );
 };
 

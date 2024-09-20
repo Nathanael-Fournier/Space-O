@@ -1,15 +1,17 @@
-@use 'src/styles/variables';
+@use '../../styles/variables' as v;
+
+/*
+COMPOSANT NAVBAR.JSX
+*/
 
 .navbar {
-  width: 100vw;
   height: 20vh;
   position: fixed;
   top: 0;
-  background-color: variables.$blackColor;
-  border-bottom: solid 1px variables.$whiteColor;
+  background-color: v.$blackColor;
+  border-bottom: solid 1px v.$whiteColor;
 
   .navbar-first-part {
-    width: 100%;
     height: 40%;
     display: flex;
     align-items: center;
@@ -18,31 +20,39 @@
   
     .navbar-logo {
       width: 35%;
-      // margin-left: 5%;
     }
 
       .navbar-second-part {
-        width: 100%;
         height: 60%;
         display: flex;
         align-items: center;
         justify-content: space-around;
+        padding: 0 calc(v.$homeFontSize / 2);
       }
 
-      .navbar-link {
-        color: variables.$whiteColor;
-        font-family: variables.$secondaryFont;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-        font-size: calc(variables.$homeFontSize / 1.25);
-        width: 20%;
-        height: 80%;
-        background-color: variables.$orangeColor;
-      }
+/*
+SOUS-COMPOSANT NAVBARLINK.JSX
+*/
 
-        .navbar-link-image {
-          width: 50%;
+        .navbar-link {
+          color: v.$whiteColor;
+          font-family: v.$secondaryFont;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          flex-direction: column;
+          font-size: calc(v.$homeFontSize / 1.25);
+          width: 20%;
+          height: 80%;
+          background-color: v.$orangeColor;
+          border-radius: calc(v.$homeFontSize / 4);
         }
+
+          .navbar-link-icon {
+            width: 40%;
+          }
 }
+
+/*
+RESPONSIVE
+*/

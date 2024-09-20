@@ -4,11 +4,7 @@ import PropTypes from 'prop-types';
 const NavbarLink = ({ image, title }) => {
   return (
     <a href="#" className="navbar-link">
-      <img
-        className="navbar-link-image"
-        src={image}
-        alt="Icone de navigation"
-      />
+      <img className="navbar-link-icon" src={image} alt="Icone de navigation" />
       {title}
     </a>
   );

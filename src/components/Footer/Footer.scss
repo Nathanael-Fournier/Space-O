@@ -1,14 +1,21 @@
-@use 'src/styles/variables';
+@use '../../styles/variables' as v;
+
+/*
+COMPOSANT FOOTER.JSX
+*/
 
 .footer {
-  color: variables.$whiteColor;
-  font-family: variables.$secondaryFont;
-  font-size: calc(variables.$homeFontSize / 1.5);
-  width: 100vw;
+  color: v.$whiteColor;
+  font-family: v.$secondaryFont;
+  font-size: calc(v.$homeFontSize / 1.5);
   height: 7.5vh;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  border-top: solid 1px variables.$whiteColor;
+  border-top: solid 1px v.$whiteColor;
   margin-top: 5vh;
 }
+
+/*
+RESPONSIVE
+*/
