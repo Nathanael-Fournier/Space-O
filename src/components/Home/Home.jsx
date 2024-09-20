@@ -1,4 +1,8 @@
 /* eslint-disable react/no-unescaped-entities */
+import illustration from '../../assets/homePicture.png';
+import planete from '../../assets/planets/Saturne.png';
+import vaisseau from '../../assets/homeShip.png';
+
 import './Home.scss';
 
 import HomeParts from './HomeParts';
@@ -8,7 +12,7 @@ const Home = () => {
     <>
       <HomeParts
         name="first-image"
-        image="../src/assets/homePicture.png"
+        image={illustration}
         title="Voyager au dela des frontières terrestres"
         text="Nous sommes des rêveurs qui adorons voyager. Vous revez aussi de partir
         dans l'espace ? Alors c'est le moment. Avec Space'O Agency, votre
@@ -17,7 +21,7 @@ const Home = () => {
       />
       <HomeParts
         name="second-image"
-        image="../src/assets/planets/Saturne.png"
+        image={planete}
         title="Nos Destinations"
         text="Partez à l'aventure au-delà des étoiles ! Explorez les dunes rouges de Mars, 
         flânez sur les plages blanches de Cérès, ou admirez les tempêtes de Jupiter. 
@@ -27,7 +31,7 @@ const Home = () => {
       />
       <HomeParts
         name="third-image"
-        image="../src/assets/homeShip.png"
+        image={vaisseau}
         title="Nos Vaisseaux"
         text="Montez à bord de vaisseaux d'exception, guidés par des pilotes légendaires. 
         Que vous choisissiez un cargo pour l'exploration ou un vaisseau de croisière 
