@@ -1,8 +1,48 @@
 @use '../../styles/variables' as v;
 
-  .ship-card {
-    border: solid 1px white;
-    height: 62.5vh;
-    width: 90%;
-    margin: 5vh auto;
+/*
+COMPOSANT SHIP.JSX
+*/
+
+/*
+SOUS-COMPOSANT SHIPCARD.JSX
+*/
+
+.ship-card {
+  background-color: v.$color3;
+  border: solid 1px white;
+  height: 62.5vh;
+  width: 90%;
+  margin: 5vh auto;
+}
+
+  .ship-picture {
+    width: 100%;
+    height: 60%;
+    padding: 0.25rem;
   }
+
+    .ship-name {
+      color: v.$orangeColor;
+      font-size: calc(v.$homeFontSize * 1.5);
+      font-family: v.$mainFont;
+      margin: 1rem;
+    }
+
+      .ship-description {
+        color: v.$whiteColor;
+        font-family: v.$secondaryFont;
+        margin: 1rem;
+      }
+
+        .ship-button {
+          display: flex;
+          justify-content: center;
+          border: solid 1px v.$whiteColor;
+          margin: auto;
+          width: 40%;
+          padding: 0.5rem;
+          color: v.$whiteColor;
+          font-family: v.$mainFont;
+          font-size: calc(v.$homeFontSize / 1.5);
+        }
