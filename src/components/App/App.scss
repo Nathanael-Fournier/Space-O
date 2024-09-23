@@ -7,3 +7,13 @@ COMPOSANT APP.JSX
 .App {
   padding-top: 20vh;
 }
+
+/*
+RESPONSIVE
+*/
+
+@media (min-width: 600px) {
+  .App {
+    padding-top: 7.5rem;
+  }
+}

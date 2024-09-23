@@ -2,11 +2,13 @@
 
 ## A faire
 
-- Responsive de la page d'accueil
+- RESPONSIVE
+  . Responsive de la page d'accueil
+  . Responsive de la page des vaisseaux
 
-- Pour le composant Ship :
-  . Créer une carte pour un vaisseau
-  . Faire le fetch sur les vaisseaux
+- Pour le composant Planet :
+  . Créer une carte pour une planète
+  . Faire le fetch sur les planètes
   . Utiliser les données dans la carte en faisant un map
 
 ## Pourquoi pas

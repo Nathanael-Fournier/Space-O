@@ -20,11 +20,11 @@ const Ship = () => {
   }, []);
 
   return (
-    <>
+    <div className="ship-content">
       {ships.map((currentShip) => (
         <ShipCard key={currentShip.id} {...currentShip} />
       ))}
-    </>
+    </div>
   );
 };
 
