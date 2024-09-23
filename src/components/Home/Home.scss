@@ -15,19 +15,25 @@ SOUS-COMPOSANT HOMEPARTS.JSX
 }
 
 .first-image {
-  width: 55%;
-  margin: 10%;
+  width: 12rem;
+  margin: 1.5rem;
 }
 
 .second-image {
-  width: 70%;
-  margin-top: 10vh;
-  margin-bottom: 5vh;
+  width: 20rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
 }
 
 .third-image {
-  width: 65%;
-  margin: 10vh 0 5vh 10%;
+  width: 18rem;
+  margin: 4rem 0 0.5rem 2.5rem;
+}
+
+.text-without-picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .secondary-title {
@@ -38,6 +44,7 @@ SOUS-COMPOSANT HOMEPARTS.JSX
   font-size: calc(v.$homeFontSize * 1.5);
   font-family: v.$mainFont;
   text-align: center;
+  margin: 0 3rem;
 }
 
 .secondary-text {
@@ -45,7 +52,7 @@ SOUS-COMPOSANT HOMEPARTS.JSX
   font-size: v.$homeFontSize;
   text-align: center;
   color: rgb(200, 197, 197);
-  margin: 5%;
+  margin: 1rem 2rem;
 }
 
 .home-button {
@@ -56,12 +63,89 @@ SOUS-COMPOSANT HOMEPARTS.JSX
   color: v.$whiteColor;
   font-family: v.$secondaryFont;
   background-color: v.$color1;
-  width: 45%;
-  height: 6vh;
+  width: 10rem;
+  height: 2.5rem;
   border-radius: 25px;
-  margin: 5%;
+  margin: 1rem;
 }
 
 /*
 RESPONSIVE
 */
+
+@media (min-width: 480px) {
+  .first-image {
+    width: 18rem;
+    margin-top: 3rem;
+  }
+
+  .second-image {
+    width: 25em;
+  }
+
+  .third-image {
+    width: 23rem;
+    margin: 4rem 0 -1rem 3rem;
+  }
+
+  .secondary-title {
+    font-size: calc(v.$homeFontSize * 2);
+    margin: 1rem 4rem;
+  }
+
+  .secondary-text {
+    font-size: calc(v.$homeFontSize * 1.25);
+    margin: 1rem 3rem;
+  }
+
+  .home-button {
+    width: 12rem;
+    height: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-parts-content {
+    flex-direction: row;
+    margin: 5rem 10rem;
+  }
+
+  .home-parts-content:nth-child(3) {
+    flex-direction: row-reverse;
+    margin-top: 7rem;
+  }
+
+  .home-parts-content:nth-child(4) {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+
+  .first-image {
+    width: 24rem;
+  }
+
+  .second-image {
+    width: 35rem;
+  }
+
+  .third-image {
+    width: 36rem;
+  }
+
+  .secondary-title {
+    font-size: calc(v.$homeFontSize * 3);
+    margin: 2.5rem 5rem;
+  }
+
+  .secondary-text {
+    font-size: calc(v.$homeFontSize * 1.5);
+    margin: 1.5rem 6rem;
+  }
+
+  .home-button {
+    width: 15rem;
+    height: 4rem;
+    margin-top: 2.5rem;
+    border-radius: 30px;
+  }
+}

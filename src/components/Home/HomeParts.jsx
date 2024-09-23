@@ -5,11 +5,13 @@ const HomeParts = ({ name, image, title, text, button }) => {
   return (
     <div className="home-parts-content">
       <img className={name} src={image} alt="Illustration du service proposé" />
-      <h2 className="secondary-title">{title}</h2>
-      <p className="secondary-text">{text}</p>
-      <a href="#" className="home-button">
-        {button}
-      </a>
+      <div className="text-without-picture">
+        <h2 className="secondary-title">{title}</h2>
+        <p className="secondary-text">{text}</p>
+        <a href="#" className="home-button">
+          {button}
+        </a>
+      </div>
     </div>
   );
 };
