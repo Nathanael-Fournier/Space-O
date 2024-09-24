@@ -21,7 +21,7 @@ const Ship = () => {
 
   return (
     <>
-      <h1 className="main-title">
+      <h1 className="ship-main-title">
         Une gamme de vaisseaux prestigieux à votre service
       </h1>
       <div className="ship-content">
