@@ -37,7 +37,7 @@ SOUS-COMPOSANT HOMEPARTS.JSX
 }
 
 .secondary-title {
-  background: -webkit-linear-gradient(180deg, v.$orangeColor, v.$color1);
+  background: -webkit-linear-gradient(70deg, v.$orangeColor, v.$gradientColor);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -59,7 +59,7 @@ SOUS-COMPOSANT HOMEPARTS.JSX
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 1px v.$whiteColor;
+  border: solid 2px v.$whiteColor;
   color: v.$whiteColor;
   font-family: v.$secondaryFont;
   background-color: v.$color1;
@@ -147,5 +147,11 @@ RESPONSIVE
     height: 4rem;
     margin-top: 2.5rem;
     border-radius: 30px;
+    transition: 0.2s;
+  }
+
+  .home-button:hover {
+    box-shadow: 0 0 1rem v.$whiteColor;
+    border-radius: 25px;
   }
 }

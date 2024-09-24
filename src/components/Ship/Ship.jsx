@@ -20,11 +20,16 @@ const Ship = () => {
   }, []);
 
   return (
-    <div className="ship-content">
-      {ships.map((currentShip) => (
-        <ShipCard key={currentShip.id} {...currentShip} />
-      ))}
-    </div>
+    <>
+      <h1 className="main-title">
+        Une gamme de vaisseaux prestigieux à votre service
+      </h1>
+      <div className="ship-content">
+        {ships.map((currentShip) => (
+          <ShipCard key={currentShip.id} {...currentShip} />
+        ))}
+      </div>
+    </>
   );
 };
 

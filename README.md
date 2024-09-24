@@ -3,8 +3,7 @@
 ## A faire
 
 - RESPONSIVE
-  . Responsive de la page d'accueil
-  . Responsive de la page des vaisseaux
+  . Toujours vérifier si tout est correct
 
 - Pour le composant Planet :
   . Créer une carte pour une planète

@@ -14,9 +14,10 @@ const Home = () => {
         name="first-image"
         image={illustration}
         title="Voyager au dela des frontières terrestres"
-        text="Nous sommes des rêveurs qui adorons voyager. Vous revez aussi de partir
-        dans l'espace ? Alors c'est le moment. Avec Space'O Agency, votre
-        destination phare est à seulement quelques clics de la réalité."
+        text="Chez Space'O Agency, nous réalisons votre rêve d'exploration spatiale. 
+        Embarquez pour un voyage inoubliable vers les étoiles, avec des pilotes
+        experts et des vaisseaux à la pointe de la technologie. Votre aventure 
+        intergalactique n'est plus un rêve, elle est à portée de clic."
         button="En savoir plus"
       />
       <HomeParts

@@ -3,10 +3,23 @@
 /*
 COMPOSANT SHIP.JSX
 */
+.main-title {
+  background: -webkit-linear-gradient(70deg, v.$orangeColor, v.$gradientColor);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5rem;
+  font-family: v.$mainFont;
+  text-align: center;
+  margin: 1rem 1rem 0 1rem;
+  padding-bottom: 1rem;
+}
 
 .ship-content {
   display: flex;
   flex-wrap: wrap;
+  width: 95%;
+  margin: auto;
 }
 
 /*
@@ -15,17 +28,24 @@ SOUS-COMPOSANT SHIPCARD.JSX
 
 .ship-card {
   background-color: v.$color3;
-  border: solid 1px white;
+  border: solid 2px v.$orangeColor;
+  box-shadow: 0 0 1rem v.$gradientColor;
   border-radius: 0.5rem;
   height: 30rem;
   width: 20rem;
-  margin: 2rem auto;
+  margin: 1rem auto 1rem auto;
+  transition: 0.2s;
+}
+
+.ship-card:hover {
+  box-shadow: 0 0 20px v.$orangeColor;
 }
 
 .ship-picture {
   width: 100%;
   height: 60%;
   padding: 0.25rem;
+  border-radius: 7px;
 }
 
 .ship-name {
@@ -44,12 +64,173 @@ SOUS-COMPOSANT SHIPCARD.JSX
 .ship-button {
   display: flex;
   justify-content: center;
-  border: solid 1px v.$whiteColor;
-  border-radius: 0.5rem;
+  align-items: center;
+  border: solid 1.5px v.$whiteColor;
+  border-radius: 15px;
   margin: auto;
-  width: 40%;
+  width: 8rem;
+  height: 2rem;
   padding: 0.5rem;
   color: v.$whiteColor;
   font-family: v.$mainFont;
   font-size: calc(v.$homeFontSize / 1.5);
+}
+
+/*
+RESPONSIVE
+*/
+
+@media (min-width: 480px) {
+  .main-title {
+    font-size: 1.75rem;
+    margin: 2rem 3rem 1rem 3rem;
+    padding-bottom: 0;
+  }
+
+  .ship-card {
+    height: 38rem;
+    width: 28rem;
+  }
+
+  .ship-picture {
+    height: 65%;
+  }
+
+  .ship-name {
+    font-size: calc(v.$homeFontSize * 1.75);
+    margin: 1.5rem;
+  }
+
+  .ship-description {
+    font-size: 1.1rem;
+    margin: 1.5rem;
+  }
+
+  .ship-button {
+    width: 9rem;
+    height: 2.5rem;
+    font-size: calc(v.$homeFontSize / 1.35);
+    transition: 0.2s;
+  }
+
+  .ship-button:hover {
+    box-shadow: 0 0 1rem v.$whiteColor;
+    border-radius: 25px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 2rem;
+    margin: 2rem 3rem 0.5rem 3rem;
+    padding-bottom: 1rem;
+  }
+
+  .ship-card {
+    height: 45rem;
+    width: 35rem;
+  }
+
+  .ship-picture {
+    height: 67%;
+  }
+
+  .ship-name {
+    font-size: calc(v.$homeFontSize * 1.8);
+    margin: 1.6rem;
+  }
+
+  .ship-description {
+    font-size: 1.2rem;
+    margin: 1.6rem;
+  }
+
+  .ship-button {
+    width: 10rem;
+    height: 3rem;
+    font-size: calc(v.$homeFontSize / 1.2);
+    transition: 0.2s;
+  }
+
+  .ship-button:hover {
+    box-shadow: 0 0 1rem v.$whiteColor;
+    border-radius: 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ship-card {
+    height: 40rem;
+    width: 40%;
+    margin: 2rem auto 2rem auto;
+  }
+
+  .ship-picture {
+    height: 65%;
+  }
+
+  .ship-name {
+    font-size: calc(v.$homeFontSize * 1.9);
+    margin: 1.7rem;
+  }
+
+  .ship-button {
+    width: 9rem;
+    height: 2rem;
+    font-size: calc(v.$homeFontSize / 1.3);
+  }
+}
+
+@media (min-width: 1200px) {
+  .ship-card {
+    height: 50rem;
+    width: 40%;
+    margin: 2rem auto 2rem auto;
+  }
+
+  .ship-picture {
+    height: 65%;
+  }
+
+  .ship-name {
+    font-size: calc(v.$homeFontSize * 1.9);
+    margin: 1.7rem;
+  }
+
+  .ship-description {
+    font-size: 1.4rem;
+    margin: 1.7rem;
+  }
+
+  .ship-button {
+    width: 10rem;
+    height: 3rem;
+    font-size: calc(v.$homeFontSize / 1.2);
+    transition: 0.2s;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .ship-card {
+    height: 45rem;
+    width: 30%;
+  }
+
+  .ship-picture {
+    height: 67%;
+  }
+
+  .ship-name {
+    font-size: calc(v.$homeFontSize * 1.8);
+    margin: 1.6rem;
+  }
+
+  .ship-description {
+    font-size: 1.2rem;
+    margin: 1.6rem;
+  }
 }
