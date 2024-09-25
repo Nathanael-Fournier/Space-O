@@ -7,14 +7,14 @@
   justify-content: center;
 }
 
-span {
+.error-span {
   position: relative;
   width: 50%;
   display: flex;
   justify-content: space-between;
 }
 
-span::after, span::before {
+.error-span::after, .error-span::before {
   content: "";
   display: inline-block;
   width: 48px;

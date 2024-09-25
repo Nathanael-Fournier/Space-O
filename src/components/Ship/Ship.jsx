@@ -1,24 +1,10 @@
-import { useEffect, useState } from 'react';
-
-import axios from 'axios';
+import propTypes from 'prop-types';
 
 import ShipCard from './ShipCard';
 
 import './Ship.scss';
 
-const Ship = () => {
-  const [ships, setShips] = useState([]);
-
-  const loadShips = () => {
-    axios.get('http://localhost:8000/api/v1/ship').then((response) => {
-      setShips(response.data);
-    });
-  };
-
-  useEffect(() => {
-    loadShips();
-  }, []);
-
+const Ship = ({ ships }) => {
   return (
     <>
       <h1 className="ship-main-title">
@@ -31,6 +17,14 @@ const Ship = () => {
       </div>
     </>
   );
+};
+
+Ship.propTypes = {
+  ships: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Ship;

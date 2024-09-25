@@ -51,7 +51,7 @@ SOUS-COMPOSANT HOMEPARTS.JSX
   font-family: v.$secondaryFont;
   font-size: v.$homeFontSize;
   text-align: center;
-  color: rgb(200, 197, 197);
+  color: v.$greyTextColor;
   margin: 1rem 2rem;
 }
 

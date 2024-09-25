@@ -1,0 +1,60 @@
+@use '../../styles/variables' as v;
+
+.ship-detail-content {
+  // A LAISSER ??
+  // min-height: 100vh;
+  width: 90%;
+  margin: auto;
+
+.ship-detail-main-title {
+  color: v.$orangeColor;
+  font-size: 2rem;
+  font-family: v.$mainFont;
+  text-align: center;
+  margin: 1rem 1rem 0 1rem;
+  padding-bottom: 1.25rem;
+}
+
+.ship-detail-picture {
+  width: 100%;
+  border: solid 2px v.$orangeColor;
+  box-shadow: 0 0 1rem v.$gradientColor;
+  border-radius: 0.5rem;
+}
+
+.ship-detail-secondary-title {
+  color: v.$orangeColor;
+  font-family: v.$mainFont;
+  font-size: 1.1rem;
+  margin: 1rem;
+}
+
+.ship-detail-description {
+  color: v.$greyTextColor;
+  font-family: v.$secondaryFont;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.ship-detail-characteristic {
+  color: v.$whiteColor;
+  font-family: v.$mainFont;
+  font-size: 0.9rem;
+  margin: 0.75rem 1rem 0 1rem;
+}
+
+.ship-detail-information {
+  color: v.$greyTextColor;
+  font-family: v.$secondaryFont;
+  font-size: 0.9rem;
+  padding-left: 5px;
+}
+
+.ship-detail-pilot-link {
+  color: v.$orangeColor;
+  font-family: v.$secondaryFont;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding-left: 5px;
+}
+}
