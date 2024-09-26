@@ -13,6 +13,8 @@ import ShipDetail from '../ShipDetail/ShipDetail';
 import Error from '../Error/Error';
 import Footer from '../Footer/Footer';
 
+import useScrollAuto from '../../utils/useScrollAuto';
+
 function App() {
   const [ships, setShips] = useState([]);
   const [loadingShips, setLoadingShips] = useState(true);
@@ -31,6 +33,8 @@ function App() {
   useEffect(() => {
     loadShips();
   }, []);
+
+  useScrollAuto();
 
   return (
     <div className="App">
