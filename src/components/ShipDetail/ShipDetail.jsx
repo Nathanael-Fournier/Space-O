@@ -27,62 +27,66 @@ const ShipDetail = ({ ships, loadingShips }) => {
         Présentation du vaisseau :
       </h2>
       <p className="ship-detail-description">{shipToDisplay.description}</p>
-      <h3 className="ship-detail-secondary-title">Fiche technique :</h3>
-      <p className="ship-detail-characteristic">
-        Pilote :
-        <Link to="/" className="ship-detail-pilot-link">
-          {shipToDisplay.pilot.firstname} {shipToDisplay.pilot.lastname}
-        </Link>
-      </p>
-      <p className="ship-detail-characteristic">
-        Constructeur :
-        <span className="ship-detail-information">
-          {shipToDisplay.brand.name}
-        </span>
-      </p>
-      <p className="ship-detail-characteristic">
-        Lieu de construction :
-        <span className="ship-detail-information">
-          {shipToDisplay.brand.country}
-        </span>
-      </p>
-      <p className="ship-detail-characteristic">
-        Date de fabrication :
-        <span className="ship-detail-information">
-          {shipToDisplay.year_of_manufacture.slice(0, 10)}
-        </span>
-      </p>
-      <p className="ship-detail-characteristic">
-        Catégorie :
-        <span className="ship-detail-information">
-          {shipToDisplay.category.name} de{' '}
-          {shipToDisplay.category.classification}
-        </span>
-      </p>
-      <p className="ship-detail-characteristic">
-        Vitesse :
-        <span className="ship-detail-information">
-          {shipToDisplay.speed} km/h
-        </span>
-      </p>
-      <p className="ship-detail-characteristic">
-        Capsules d'urgence :
-        <span className="ship-detail-information">
-          {shipToDisplay.emergency_capsule} capsule(s)
-        </span>
-      </p>
-      <p className="ship-detail-characteristic">
-        Places assises :
-        <span className="ship-detail-information">
-          {shipToDisplay.seating_capacity} place(s)
-        </span>
-      </p>
-      <p className="ship-detail-characteristic">
-        Taille :
-        <span className="ship-detail-information">
-          {shipToDisplay.size} mètres
-        </span>
-      </p>
+      <h3 className="ship-detail-secondary-title ship-detail-technical">
+        Fiche technique :
+      </h3>
+      <div className="ship-detail-bottom-div">
+        <p className="ship-detail-characteristic">
+          Pilote :
+          <Link to="/" className="ship-detail-pilot-link">
+            {shipToDisplay.pilot.firstname} {shipToDisplay.pilot.lastname}
+          </Link>
+        </p>
+        <p className="ship-detail-characteristic">
+          Constructeur :
+          <span className="ship-detail-information">
+            {shipToDisplay.brand.name}
+          </span>
+        </p>
+        <p className="ship-detail-characteristic">
+          Lieu de construction :
+          <span className="ship-detail-information">
+            {shipToDisplay.brand.country}
+          </span>
+        </p>
+        <p className="ship-detail-characteristic">
+          Date de fabrication :
+          <span className="ship-detail-information">
+            {shipToDisplay.year_of_manufacture.slice(0, 10)}
+          </span>
+        </p>
+        <p className="ship-detail-characteristic">
+          Catégorie :
+          <span className="ship-detail-information">
+            {shipToDisplay.category.name} de{' '}
+            {shipToDisplay.category.classification}
+          </span>
+        </p>
+        <p className="ship-detail-characteristic">
+          Vitesse :
+          <span className="ship-detail-information">
+            {shipToDisplay.speed} km/h
+          </span>
+        </p>
+        <p className="ship-detail-characteristic">
+          Capsules d'urgence :
+          <span className="ship-detail-information">
+            {shipToDisplay.emergency_capsule} capsule(s)
+          </span>
+        </p>
+        <p className="ship-detail-characteristic">
+          Places assises :
+          <span className="ship-detail-information">
+            {shipToDisplay.seating_capacity} place(s)
+          </span>
+        </p>
+        <p className="ship-detail-characteristic">
+          Longueur :
+          <span className="ship-detail-information">
+            {shipToDisplay.size} mètres
+          </span>
+        </p>
+      </div>
     </div>
   );
 };

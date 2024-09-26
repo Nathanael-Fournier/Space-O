@@ -5,15 +5,15 @@ COMPOSANT APP.JSX
 */
 
 .App {
-  padding-top: 20vh;
+  padding-top: 8rem;
 }
 
 /*
 RESPONSIVE
 */
 
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   .App {
-    padding-top: 7.5rem;
+    padding-top: 6rem;
   }
 }

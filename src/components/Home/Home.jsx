@@ -18,6 +18,7 @@ const Home = () => {
         Embarquez pour un voyage inoubliable vers les étoiles, avec des pilotes
         experts et des vaisseaux à la pointe de la technologie. Votre aventure 
         intergalactique n'est plus un rêve, elle est à portée de clic."
+        link="#"
         button="En savoir plus"
       />
       <HomeParts
@@ -28,6 +29,7 @@ const Home = () => {
         flânez sur les plages blanches de Cérès, ou admirez les tempêtes de Jupiter. 
         Chaque planète offre un monde d'émerveillements à découvrir. Quel sera votre 
         prochain voyage spatial ?"
+        link="/planetes"
         button="Voir les Planètes"
       />
       <HomeParts
@@ -38,6 +40,7 @@ const Home = () => {
         Que vous choisissiez un cargo pour l'exploration ou un vaisseau de croisière 
         pour un voyage tout confort, notre flotte vous garantit une expérience unique 
         parmi les étoiles."
+        link="/vaisseaux"
         button="Voir les Vaisseaux"
       />
     </>
