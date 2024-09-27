@@ -10,13 +10,9 @@
   width: 22rem;
   margin: auto;
 
-.ship-detail-main-title {
-  color: v.$orangeColor;
-  font-family: v.$mainFont;
-  text-align: center;
-  font-size: 2rem;
-  margin: 1rem 1rem 0 1rem;
-  padding-bottom: 1.25rem;
+.ship-detail-title-picture-div {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .ship-detail-picture {
@@ -25,6 +21,18 @@
   border: solid 2px v.$orangeColor;
   box-shadow: 0 0 1rem v.$gradientColor;
   border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.ship-detail-main-title {
+  font-family: v.$mainFont;
+  text-align: center;
+  font-size: 2rem;
+  background: -webkit-linear-gradient(270deg, v.$orangeColor, v.$gradientColor);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 1.5rem 0;
 }
 
 .ship-detail-secondary-title {
@@ -72,14 +80,14 @@
   .ship-detail-content {
     width: 29rem;
 
-  .ship-detail-main-title {
-    font-size: 2.3rem;
-    margin: 1.75rem 1.5rem 0 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-
   .ship-detail-picture {
     height: 25rem;
+    margin-bottom: 1rem;
+  }
+
+  .ship-detail-main-title {
+    font-size: 2.3rem;
+    padding: 2rem 0;
   }
 
   .ship-detail-secondary-title {
@@ -111,14 +119,14 @@
   .ship-detail-content {
     width: 46rem;
 
-  .ship-detail-main-title {
-    font-size: 2.5rem;
-    margin: 2rem 1.75rem 0 1.75rem;
-    padding-bottom: 1.75rem;
-  }
-
   .ship-detail-picture {
     height: 35rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ship-detail-main-title {
+    font-size: 2.5rem;
+    padding: 2.5rem 0;
   }
 
   .ship-detail-secondary-title {
@@ -148,44 +156,30 @@
 
 @media (min-width: 1024px) {
   .ship-detail-content {
-    width: 100vw;
-
-  .ship-detail-main-title {
-    padding-bottom: 1rem;
-  }
+    width: 50rem;
 
   .ship-detail-picture {
-    float: left;
-    width: 25rem;
-    height: 25rem;
-    margin: 1.5rem;
+    height: 40rem;
   }
 
-  .ship-detail-technical {
-    margin: 3rem 2rem 0.5rem 2rem;
+  .ship-detail-secondary-title {
+    font-size: 1.6rem;
   }
 
   .ship-detail-description {
-    margin: 0 3rem;
+    font-size: 1.3rem;
   }
 
   .ship-detail-characteristic {
-    font-size: 1rem;
-    margin: 1.5rem 1rem 0 1rem;
-    width: 20rem;
+    font-size: 1.2rem;
   }
 
   .ship-detail-information {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
 
   .ship-detail-pilot-link {
-    font-size: 1rem;
-  }
-
-  .ship-detail-bottom-div {
-    display: flex;
-    flex-wrap: wrap;
+    font-size: 1.2rem;
   }
   }
 }
@@ -193,46 +187,51 @@
 @media (min-width: 1200px) {
   .ship-detail-content {
     width: 100vw;
-  
-  .ship-detail-main-title {
-    font-size: 2.7rem;
-    margin: 3rem auto 1rem auto;
-    padding-bottom: 1rem;
+
+  .ship-detail-title-picture-div {
+    display: unset;
   }
-  
+
   .ship-detail-picture {
+    float: left;
     width: 30rem;
     height: 30rem;
+    margin: 10rem 3rem 0 5rem;
   }
-  
+
+  .ship-detail-main-title {
+    padding: 3.5rem 0;
+    font-size: 3rem;
+  }
+
   .ship-detail-secondary-title {
-    margin: 2.5rem 0 2rem 0;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
+    margin: 0 0 1.5rem 0;
   }
 
   .ship-detail-technical {
-    margin: 2rem 0 0.5rem 0;
+    margin: 1.5rem 0;
   }
-  
+
   .ship-detail-description {
     font-size: 1.3rem;
-    margin: 0 1.5rem;
+    margin: 0 5rem;
   }
-  
+
   .ship-detail-characteristic {
-    font-size: 1.1rem;
-    margin: 1.5rem 1rem 0 1rem;
-    width: 22rem;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    width: 40rem;
   }
-  
+
   .ship-detail-information {
     font-size: 1.1rem;
   }
-  
+
   .ship-detail-pilot-link {
     font-size: 1.1rem;
   }
-  
+
   .ship-detail-bottom-div {
     display: flex;
     flex-wrap: wrap;
@@ -244,33 +243,34 @@
   .ship-detail-content {
     width: 100vw;
   
-  .ship-detail-main-title {
-    font-size: 3rem;
-  }
-  
   .ship-detail-picture {
     width: 40rem;
     height: 40rem;
+    margin: 8rem 4rem 15rem 5rem;
+  }
+
+  .ship-detail-main-title {
+    padding: 4rem 0;
+    font-size: 3.5rem;
   }
   
   .ship-detail-secondary-title {
-    margin: 2.5rem 0 2rem 0;
-    font-size: 1.8rem;
+    font-size: 1.9rem;
+    margin: 0 0 2rem 0;
   }
 
   .ship-detail-technical {
-    margin: 2rem 0 0.5rem 0;
+    margin: 2rem 0;
   }
   
   .ship-detail-description {
-    font-size: 1.5rem;
-    margin: 0 4rem;
+    font-size: 1.6rem;
   }
   
   .ship-detail-characteristic {
     font-size: 1.3rem;
-    margin: 1rem 1rem 0 1rem;
-    width: 100%;
+    margin: 0.6rem 0;
+    width: 30rem;
   }
   
   .ship-detail-information {

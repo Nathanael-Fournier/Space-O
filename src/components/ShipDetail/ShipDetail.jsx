@@ -17,12 +17,14 @@ const ShipDetail = ({ ships, loadingShips }) => {
 
   return (
     <div className="ship-detail-content">
-      <h1 className="ship-detail-main-title">{shipToDisplay.name}</h1>
-      <img
-        className="ship-detail-picture"
-        src={shipToDisplay.picture}
-        alt="Illustration du vaisseau sélectionné"
-      />
+      <div className="ship-detail-title-picture-div">
+        <img
+          className="ship-detail-picture"
+          src={shipToDisplay.picture}
+          alt="Illustration du vaisseau sélectionné"
+        />
+        <h1 className="ship-detail-main-title">{shipToDisplay.name}</h1>
+      </div>
       <h2 className="ship-detail-secondary-title">
         Présentation du vaisseau :
       </h2>
