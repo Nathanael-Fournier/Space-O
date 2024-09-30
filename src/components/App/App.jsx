@@ -17,7 +17,9 @@ import useScrollAuto from '../../utils/useScrollAuto';
 
 function App() {
   const [ships, setShips] = useState([]);
+  const [planets, setPlanets] = useState([]);
   const [loadingShips, setLoadingShips] = useState(true);
+  const [loadingPlanets, setLoadingPlanets] = useState(true);
 
   const loadShips = () => {
     axios
@@ -30,8 +32,20 @@ function App() {
       });
   };
 
+  const loadPlanets = () => {
+    axios
+      .get('http://localhost:8000/api/v1/planet')
+      .then((response) => {
+        setPlanets(response.data);
+      })
+      .finally(() => {
+        setLoadingPlanets(false);
+      });
+  };
+
   useEffect(() => {
     loadShips();
+    loadPlanets();
   }, []);
 
   useScrollAuto();
@@ -41,7 +55,11 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/planetes" element={<Planet />} />
+        <Route path="/planetes" element={<Planet planets={planets} />} />
+        {/* <Route
+          path="/planetes/:slug"
+          element={<ShipDetail ships={ships} loadingShips={loadingShips} />}
+        /> */}
         <Route path="/vaisseaux" element={<Ship ships={ships} />} />
         <Route
           path="/vaisseaux/:slug"
