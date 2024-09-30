@@ -12,7 +12,7 @@ COMPOSANT SHIP.JSX
   font-family: v.$mainFont;
   text-align: center;
   margin: 1rem 1rem 0 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem;
 }
 
 .ship-content {
@@ -88,7 +88,6 @@ RESPONSIVE
   .ship-main-title {
     font-size: 1.75rem;
     margin: 2rem 3rem 1rem 3rem;
-    padding-bottom: 0;
   }
 
   .ship-card {
@@ -128,7 +127,6 @@ RESPONSIVE
   .ship-main-title {
     font-size: 2rem;
     margin: 2rem 3rem 0.5rem 3rem;
-    padding-bottom: 1rem;
   }
 
   .ship-card {

@@ -7,11 +7,13 @@ import './Planet.scss';
 const PlanetCard = ({ picture, name, description, slug }) => {
   return (
     <div className="planet-card">
-      <img
-        className="planet-picture"
-        src={picture}
-        alt="Illustration d'une planète"
-      />
+      <Link to={`/planetes/${slug}`}>
+        <img
+          className="planet-picture"
+          src={picture}
+          alt="Illustration d'une planète"
+        />
+      </Link>
       <h2 className="planet-name">{name}</h2>
       <p className="planet-description">{description.slice(0, 100)} ...</p>
       <Link to={`/planetes/${slug}`} className="planet-button">

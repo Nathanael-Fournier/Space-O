@@ -1,0 +1,272 @@
+@use '../../styles/variables' as v;
+
+/*
+  COMPOSANT PLANETDETAIL.JSX
+*/
+
+.planet-detail-content {
+  min-height: 100vh;
+  width: 22rem;
+  margin: auto;
+
+.planet-detail-title-picture-div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.planet-detail-picture {
+  width: 100%;
+  height: 22rem;
+  margin-bottom: 1rem;
+}
+
+.planet-detail-main-title {
+  font-family: v.$mainFont;
+  text-align: center;
+  font-size: 2rem;
+  background: -webkit-linear-gradient(270deg, v.$orangeColor, v.$gradientColor);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 1.5rem 0;
+}
+
+.planet-detail-secondary-title {
+  color: v.$orangeColor;
+  font-family: v.$mainFont;
+  font-size: 1.1rem;
+  margin: 1rem;
+}
+
+.planet-detail-description {
+  color: v.$greyTextColor;
+  font-family: v.$secondaryFont;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.planet-detail-characteristic {
+  color: v.$whiteColor;
+  font-family: v.$mainFont;
+  font-size: 0.9rem;
+  margin: 0.75rem 1rem 0 1rem;
+}
+
+.planet-detail-information {
+  color: v.$greyTextColor;
+  font-family: v.$secondaryFont;
+  font-size: 0.9rem;
+  padding-left: 5px;
+}
+}
+
+/*
+  RESPONSIVE
+*/
+
+@media (min-width: 480px) {
+  .planet-detail-content {
+    width: 29rem;
+
+  .planet-detail-picture {
+    height: 29rem;
+  }
+
+  .planet-detail-main-title {
+    font-size: 2.3rem;
+    padding: 2rem 0;
+  }
+
+  .planet-detail-secondary-title {
+    font-size: 1.3rem;
+    margin: 1.3rem;
+  }
+
+  .planet-detail-description {
+    font-size: 1.1rem;
+    margin: 0 1.3rem;
+  }
+
+  .planet-detail-characteristic {
+    font-size: 1rem;
+    margin: 0.9rem 1.3rem 0 1.3rem;
+  }
+
+  .planet-detail-information {
+    font-size: 1.1rem;
+  }
+
+  .planet-detail-pilot-link {
+    font-size: 1rem;
+  }
+  }
+}
+
+@media (min-width: 768px) {
+  .planet-detail-content {
+    width: 46rem;
+
+  .planet-detail-picture {
+    height: 45rem;
+    margin-bottom: 1.5rem;
+    padding: 2rem;
+  }
+
+  .planet-detail-main-title {
+    font-size: 2.5rem;
+    padding: 2.5rem 0;
+  }
+
+  .planet-detail-secondary-title {
+    font-size: 1.5rem;
+    margin: 1.5rem;
+  }
+
+  .planet-detail-description {
+    font-size: 1.2rem;
+    margin: 0 1.5rem;
+  }
+
+  .planet-detail-characteristic {
+    font-size: 1.1rem;
+    margin: 1rem 1.5rem 0 1.5rem;
+  }
+
+  .planet-detail-information {
+    font-size: 1.2rem;
+  }
+
+  .planet-detail-pilot-link {
+    font-size: 1.1rem;
+  }
+  }
+}
+
+@media (min-width: 1024px) {
+  .planet-detail-content {
+    width: 50rem;
+
+  .planet-detail-picture {
+    height: 50rem;
+  }
+
+  .planet-detail-secondary-title {
+    font-size: 1.6rem;
+  }
+
+  .planet-detail-description {
+    font-size: 1.3rem;
+  }
+
+  .planet-detail-characteristic {
+    font-size: 1.2rem;
+  }
+
+  .planet-detail-information {
+    font-size: 1.3rem;
+  }
+
+  .planet-detail-pilot-link {
+    font-size: 1.2rem;
+  }
+  }
+}
+
+@media (min-width: 1200px) {
+  .planet-detail-content {
+    width: 100vw;
+
+  .planet-detail-title-picture-div {
+    display: unset;
+  }
+
+  .planet-detail-picture {
+    float: left;
+    width: 35rem;
+    height: 35rem;
+    margin: 10rem 3rem 0 5rem;
+  }
+
+  .planet-detail-main-title {
+    padding: 3.5rem 0;
+    font-size: 3rem;
+  }
+
+  .planet-detail-secondary-title {
+    font-size: 1.7rem;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .planet-detail-technical {
+    margin: 1.5rem 0;
+  }
+
+  .planet-detail-description {
+    font-size: 1.3rem;
+    margin: 0 5rem;
+  }
+
+  .planet-detail-characteristic {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    width: 40rem;
+  }
+
+  .planet-detail-information {
+    font-size: 1.1rem;
+  }
+
+  .planet-detail-pilot-link {
+    font-size: 1.1rem;
+  }
+
+  .planet-detail-bottom-div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  }
+}
+
+@media (min-width: 1440px) {
+  .planet-detail-content {
+    width: 100vw;
+  
+  .planet-detail-picture {
+    width: 40rem;
+    height: 40rem;
+    margin: 8rem 4rem 15rem 5rem;
+  }
+
+  .planet-detail-main-title {
+    padding: 4rem 0;
+    font-size: 3.5rem;
+  }
+  
+  .planet-detail-secondary-title {
+    font-size: 1.9rem;
+    margin: 0 0 2rem 0;
+  }
+
+  .planet-detail-technical {
+    margin: 2rem 0;
+  }
+  
+  .planet-detail-description {
+    font-size: 1.6rem;
+  }
+  
+  .planet-detail-characteristic {
+    font-size: 1.3rem;
+    margin: 0.6rem 0;
+    width: 30rem;
+  }
+  
+  .planet-detail-information {
+    font-size: 1.3rem;
+  }
+  
+  .planet-detail-pilot-link {
+    font-size: 1.3rem;
+  }
+  }
+}

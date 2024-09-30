@@ -8,6 +8,7 @@ import './App.scss';
 import Navbar from '../Navbar/Navbar';
 import Home from '../Home/Home';
 import Planet from '../Planet/Planet';
+import PlanetDetail from '../PlanetDetail/PlanetDetail';
 import Ship from '../Ship/Ship';
 import ShipDetail from '../ShipDetail/ShipDetail';
 import Error from '../Error/Error';
@@ -56,10 +57,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/planetes" element={<Planet planets={planets} />} />
-        {/* <Route
+        <Route
           path="/planetes/:slug"
-          element={<ShipDetail ships={ships} loadingShips={loadingShips} />}
-        /> */}
+          element={
+            <PlanetDetail planets={planets} loadingPlanets={loadingPlanets} />
+          }
+        />
         <Route path="/vaisseaux" element={<Ship ships={ships} />} />
         <Route
           path="/vaisseaux/:slug"

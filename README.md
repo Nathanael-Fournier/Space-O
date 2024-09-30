@@ -5,16 +5,13 @@
 - RESPONSIVE
   . Toujours vérifier si tout est correct
 
-- Pour le composant Planet :
-  . Créer une carte pour une planète
-  . Faire le fetch sur les planètes
-  . Utiliser les données dans la carte en faisant un map
+  - Faire une classe pour chaque planète pour avoir la meme taille d'image ?
 
 ## Pourquoi pas
 
 - Une page d'accueil avec la video du vaisseau avec un lien qui amenerait sur la page de présentation ( voir le code dans "Bordel")
 
-### Bordel XD
+### Bordel
 
 Le code du composant
 

@@ -12,6 +12,7 @@ COMPOSANT PLANET.JSX
   font-family: v.$mainFont;
   text-align: center;
   margin: 1rem 1rem 0 1rem;
+  padding: 1rem;
 }
 
 .planet-content {
@@ -29,7 +30,7 @@ SOUS-COMPOSANT PLANETCARD.JSX
   border: solid 2px v.$orangeColor;
   box-shadow: 0 0 1rem v.$gradientColor;
   border-radius: 3rem;
-  height: 30rem;
+  height: 33rem;
   width: 20rem;
   margin: 1rem auto 1rem auto;
   // PLACER TRANSITION AILLEURS NON ??
@@ -67,7 +68,7 @@ SOUS-COMPOSANT PLANETCARD.JSX
   align-items: center;
   border: solid 1.5px v.$whiteColor;
   border-radius: 1rem;
-  margin: auto;
+  margin: 1.5rem auto 0 auto;
   width: 8rem;
   height: 2rem;
   padding: 0.5rem;
@@ -89,7 +90,7 @@ RESPONSIVE
   }
 
   .planet-card {
-    height: 38rem;
+    height: 42rem;
     width: 28rem;
   }
 
@@ -129,7 +130,7 @@ RESPONSIVE
   }
 
   .planet-card {
-    height: 45rem;
+    height: 50rem;
     width: 35rem;
     padding: 2rem;
   }
@@ -153,6 +154,7 @@ RESPONSIVE
     height: 3rem;
     font-size: calc(v.$homeFontSize / 1.2);
     transition: 0.2s;
+    margin: 2.5rem auto 0 auto;
   }
 
   .planet-button:hover {
@@ -191,7 +193,7 @@ RESPONSIVE
 
 @media (min-width: 1200px) {
   .planet-card {
-    height: 50rem;
+    height: 46rem;
     width: 40%;
     margin: 2rem auto 2rem auto;
   }
@@ -216,6 +218,7 @@ RESPONSIVE
     height: 3rem;
     font-size: calc(v.$homeFontSize / 1.2);
     transition: 0.2s;
+    margin: 0 auto 0 auto;
   }
 }
 
@@ -226,7 +229,7 @@ RESPONSIVE
   }
 
   .planet-card {
-    height: 45rem;
+    height: 49rem;
     width: 30%;
   }
 
