@@ -20,6 +20,7 @@ COMPOSANT PLANET.JSX
   flex-wrap: wrap;
   width: 95%;
   margin: auto;
+  flex: 1;
 }
 
 /*
@@ -44,8 +45,47 @@ SOUS-COMPOSANT PLANETCARD.JSX
 .planet-picture {
   width: 100%;
   height: 60%;
-  padding: 1rem;
   transition: 0.3s ease-in-out;
+}
+
+.Soleil {
+  padding: 0.8rem;
+}
+
+.Mercure {
+  padding: 1.1rem;
+}
+
+.Vénus {
+  padding: 1.3rem;
+}
+
+.Terre {
+  padding: 2rem;
+}
+
+.Mars {
+  padding: 0.5rem;
+}
+
+.Jupiter {
+  padding: 2.1rem;
+}
+
+.Saturne {
+  padding: 1.1rem;
+}
+
+.Uranus {
+  padding: 2.1rem;
+}
+
+.Neptune {
+  padding: 2.1em;
+}
+
+.Pluton {
+  padding: 2.1rem;
 }
 
 .planet-picture:hover {
@@ -101,7 +141,7 @@ RESPONSIVE
 
   .planet-picture {
     height: 65%;
-    padding: 2rem;
+    // padding: 2rem;
   }
 
   .planet-name {
@@ -171,7 +211,7 @@ RESPONSIVE
 @media (min-width: 1024px) {
   .planet-card {
     height: 40rem;
-    width: 40%;
+    width: 28rem;
     margin: 2rem auto 2rem auto;
   }
 
@@ -199,7 +239,7 @@ RESPONSIVE
 @media (min-width: 1200px) {
   .planet-card {
     height: 46rem;
-    width: 40%;
+    width: 32rem;
     margin: 2rem auto 2rem auto;
   }
 
@@ -235,7 +275,7 @@ RESPONSIVE
 
   .planet-card {
     height: 49rem;
-    width: 30%;
+    width: 34rem;
   }
 
   .planet-picture {

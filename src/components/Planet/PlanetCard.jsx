@@ -9,7 +9,7 @@ const PlanetCard = ({ picture, name, description, slug }) => {
     <div className="planet-card">
       <Link to={`/planetes/${slug}`}>
         <img
-          className="planet-picture"
+          className={`planet-picture ${name}`}
           src={picture}
           alt="Illustration d'une planète"
         />

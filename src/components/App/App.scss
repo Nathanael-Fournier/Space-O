@@ -6,6 +6,9 @@ COMPOSANT APP.JSX
 
 .App {
   padding-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /*

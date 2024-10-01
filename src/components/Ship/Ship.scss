@@ -20,6 +20,7 @@ COMPOSANT SHIP.JSX
   flex-wrap: wrap;
   width: 95%;
   margin: auto;
+  flex: 1;
 }
 
 /*
@@ -33,8 +34,7 @@ SOUS-COMPOSANT SHIPCARD.JSX
   border-radius: 0.5rem;
   height: 30rem;
   width: 20rem;
-  margin: 1rem auto 1rem auto;
-  // PLACER TRANSITION AILLEURS NON ??
+  margin: 1rem auto;
   transition: 0.3s ease-in-out;
 }
 
@@ -164,7 +164,7 @@ RESPONSIVE
 @media (min-width: 1024px) {
   .ship-card {
     height: 40rem;
-    width: 40%;
+    width: 28rem;
     margin: 2rem auto 2rem auto;
   }
 
@@ -192,8 +192,8 @@ RESPONSIVE
 @media (min-width: 1200px) {
   .ship-card {
     height: 50rem;
-    width: 40%;
-    margin: 2rem auto 2rem auto;
+    width: 33rem;
+    margin: 2rem auto;
   }
 
   .ship-picture {
@@ -227,7 +227,7 @@ RESPONSIVE
 
   .ship-card {
     height: 45rem;
-    width: 30%;
+    width: 33rem;
   }
 
   .ship-picture {

@@ -5,6 +5,7 @@ COMPOSANT ESTIMATE
 */
 
 .estimate-content {
+  flex: 1;
 
 .estimate-title {
   background: -webkit-linear-gradient(70deg, v.$orangeColor, v.$gradientColor);
@@ -184,32 +185,32 @@ RESPONSIVE
   }
 }
 
-@media (min-width: 1440px) {
-  .estimate-content {
+// @media (min-width: 1440px) {
+//   .estimate-content {
 
-  .estimate-title {
-    padding: 2rem;
-    font-size: 3rem;
-  }
+//   .estimate-title {
+//     padding: 2rem;
+//     font-size: 3rem;
+//   }
 
-  .estimate-form {
-    height: 43rem;
-    width: 38rem;
-  }
+//   .estimate-form {
+//     height: 43rem;
+//     width: 38rem;
+//   }
 
-  .estimate-label {
-    font-size: 1.5rem;
-  }
+//   .estimate-label {
+//     font-size: 1.5rem;
+//   }
 
-  .estimate-input {
-    padding: 1.2rem;
-    font-size: 1.2rem;
-  }
+//   .estimate-input {
+//     padding: 1.2rem;
+//     font-size: 1.2rem;
+//   }
 
-  .estimate-button {
-    width: 15rem;
-    padding: 1.2rem;
-    font-size: 1.3rem;
-  }
-  }
-}
+//   .estimate-button {
+//     width: 15rem;
+//     padding: 1.2rem;
+//     font-size: 1.3rem;
+//   }
+//   }
+// }
