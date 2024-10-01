@@ -88,9 +88,49 @@ SOUS-COMPOSANT PLANETCARD.JSX
   padding: 2.1rem;
 }
 
-.planet-picture:hover {
-  padding: 0.5rem;
+.Soleil:hover {
+  padding: 0.3rem;
 }
+
+.Mercure:hover {
+  padding: 0.6rem;
+}
+
+.Vénus:hover {
+  padding: 0.7rem;
+}
+
+.Terre:hover {
+  padding: 1.5rem;
+}
+
+.Mars:hover {
+  padding: 0;
+}
+
+.Jupiter:hover {
+  padding: 1.6rem;
+}
+
+.Saturne:hover {
+  padding: 0.6rem;
+}
+
+.Uranus:hover {
+  padding: 1.6rem;
+}
+
+.Neptune:hover {
+  padding: 1.6em;
+}
+
+.Pluton:hover {
+  padding: 1.6rem;
+}
+
+// .planet-picture:hover {
+//   padding: 0.5rem;
+// }
 
 .planet-name {
   color: v.$orangeColor;
