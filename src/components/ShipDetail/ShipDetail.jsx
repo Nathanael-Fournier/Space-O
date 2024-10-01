@@ -35,7 +35,10 @@ const ShipDetail = ({ ships, loadingShips }) => {
       <div className="ship-detail-bottom-div">
         <p className="ship-detail-characteristic">
           Pilote :
-          <Link to="/" className="ship-detail-pilot-link">
+          <Link
+            to={`/pilotes/${shipToDisplay.pilot.slug}`}
+            className="ship-detail-pilot-link"
+          >
             {shipToDisplay.pilot.firstname} {shipToDisplay.pilot.lastname}
           </Link>
         </p>
