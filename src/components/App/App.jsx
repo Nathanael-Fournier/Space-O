@@ -11,6 +11,7 @@ import Planet from '../Planet/Planet';
 import PlanetDetail from '../PlanetDetail/PlanetDetail';
 import Ship from '../Ship/Ship';
 import ShipDetail from '../ShipDetail/ShipDetail';
+import Estimate from '../Estimate/Estimate';
 import Error from '../Error/Error';
 import Footer from '../Footer/Footer';
 
@@ -67,6 +68,10 @@ function App() {
         <Route
           path="/vaisseaux/:slug"
           element={<ShipDetail ships={ships} loadingShips={loadingShips} />}
+        />
+        <Route
+          path="/devis"
+          element={<Estimate planets={planets} ships={ships} />}
         />
         <Route path="*" element={<Error />} />
       </Routes>

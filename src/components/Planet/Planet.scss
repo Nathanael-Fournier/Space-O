@@ -45,6 +45,11 @@ SOUS-COMPOSANT PLANETCARD.JSX
   width: 100%;
   height: 60%;
   padding: 1rem;
+  transition: 0.3s ease-in-out;
+}
+
+.planet-picture:hover {
+  padding: 0.5rem;
 }
 
 .planet-name {
