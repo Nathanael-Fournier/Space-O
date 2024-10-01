@@ -36,6 +36,7 @@ const Estimate = ({ planets, ships }) => {
           className="estimate-input"
           id="travelers"
           type="number"
+          placeholder="ex : 1, 2, 5.."
           value={travelersInput}
           onChange={(event) => {
             setTravelersInput(parseInt(event.target.value, 10));
