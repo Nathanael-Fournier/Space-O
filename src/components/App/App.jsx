@@ -23,6 +23,7 @@ function App() {
   const [planets, setPlanets] = useState([]);
   const [loadingShips, setLoadingShips] = useState(true);
   const [loadingPlanets, setLoadingPlanets] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
 
   const loadShips = () => {
     axios
@@ -73,7 +74,9 @@ function App() {
         <Route path="/pilotes/:slug" element={<PilotDetail />} />
         <Route
           path="/devis"
-          element={<Estimate planets={planets} ships={ships} />}
+          element={
+            <Estimate planets={planets} ships={ships} isLogged={isLogged} />
+          }
         />
         <Route path="*" element={<Error />} />
       </Routes>

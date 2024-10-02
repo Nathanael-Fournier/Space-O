@@ -8,6 +8,7 @@
   width: 22rem;
   margin: auto;
   flex: 1;
+  margin-bottom: 1.5rem;
 
 .ship-detail-title-picture-div {
   display: flex;
@@ -78,6 +79,7 @@
 @media (min-width: 480px) {
   .ship-detail-content {
     width: 29rem;
+    margin-bottom: 2rem;
 
   .ship-detail-picture {
     height: 25rem;
@@ -117,6 +119,7 @@
 @media (min-width: 768px) {
   .ship-detail-content {
     width: 46rem;
+    margin-bottom: 2.5rem;
 
   .ship-detail-picture {
     height: 35rem;
@@ -156,6 +159,7 @@
 @media (min-width: 1024px) {
   .ship-detail-content {
     width: 50rem;
+    margin-bottom: 3rem;
 
   .ship-detail-picture {
     height: 40rem;

@@ -6,7 +6,7 @@ import axios from 'axios';
 
 import './Estimate.scss';
 
-const Estimate = ({ planets, ships }) => {
+const Estimate = ({ planets, ships, isLogged }) => {
   const [travelersInput, setTravelersInput] = useState('');
   const [dateInput, setDateInput] = useState('');
   const [planetInput, setPlanetInput] = useState('');
@@ -25,7 +25,7 @@ const Estimate = ({ planets, ships }) => {
     });
   };
 
-  return (
+  return isLogged ? (
     <div className="estimate-content">
       <h1 className="estimate-title">Paré au décollage ?</h1>
       <form className="estimate-form" onSubmit={submitForm}>
@@ -95,6 +95,12 @@ const Estimate = ({ planets, ships }) => {
         </button>
       </form>
     </div>
+  ) : (
+    <div className="not-logged-content">
+      <h1 className="not-logged-title">
+        Veuillez vous connecter ou créer un compte pour obtenir un devis
+      </h1>
+    </div>
   );
 };
 
@@ -109,6 +115,7 @@ Estimate.propTypes = {
       id: propTypes.number.isRequired,
     })
   ).isRequired,
+  isLogged: propTypes.bool.isRequired,
 };
 
 export default Estimate;

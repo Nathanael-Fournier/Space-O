@@ -5,6 +5,9 @@ COMPOSANT ESTIMATE
 */
 
 .estimate-content {
+  width: 20rem;
+  margin: 1.5rem auto 0 auto;
+  background-color: v.$color2;
   flex: 1;
 
 .estimate-title {
@@ -62,11 +65,36 @@ COMPOSANT ESTIMATE
 }
 
 /*
+AFFICHAGE QUAND NON CONNÉCTÉ
+*/
+
+.not-logged-content {
+  background-color: v.$color2;
+  flex: 1;
+  width: 20rem;
+  margin: 2rem auto;
+
+.not-logged-title {
+  background: -webkit-linear-gradient(70deg, v.$orangeColor, v.$gradientColor);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: v.$mainFont;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 8.5rem 2rem;
+}
+}
+
+
+/*
 RESPONSIVE
 */
 
 @media (min-width: 480px) {
   .estimate-content {
+    width: 26rem;
+    margin: 2rem auto;
 
   .estimate-title {
     padding: 1.5rem;
@@ -93,10 +121,22 @@ RESPONSIVE
     font-size: 0.9rem;
   }
   }
+
+  .not-logged-content {
+    width: 26rem;
+    margin: 2rem auto;
+
+  .not-logged-title {
+    font-size: 1.8rem;
+    margin: 10rem 2.5rem;
+  }
+  }
 }
 
 @media (min-width: 768px) {
   .estimate-content {
+    width: 35rem;  
+    margin: 2.5rem auto;
 
   .estimate-title {
     padding: 1.7rem;
@@ -123,10 +163,22 @@ RESPONSIVE
     font-size: 1rem;
   }
   }
+
+  .not-logged-content {
+    width: 35rem;
+    margin: 2.5rem auto;
+
+  .not-logged-title {
+    font-size: 2.2rem;
+    margin: 12rem 3rem;
+  }
+  }
 }
 
 @media (min-width: 1024px) {
   .estimate-content {
+    width: 40rem;  
+    margin: 3rem auto;
 
   .estimate-title {
     padding: 1.8rem;
@@ -153,10 +205,21 @@ RESPONSIVE
     font-size: 1.1rem;
   }
   }
+
+  .not-logged-content {
+    width: 40rem;
+    margin: 3rem auto;
+
+  .not-logged-title {
+    font-size: 2.3rem;
+    margin: 13rem 3.5rem;
+  }
+  }
 }
 
 @media (min-width: 1200px) {
   .estimate-content {
+    width: 50rem;  
 
   .estimate-title {
     padding: 1.9rem;
@@ -183,34 +246,53 @@ RESPONSIVE
     font-size: 1.2rem;
   }
   }
+
+  .not-logged-content {
+    width: 50rem;
+
+  .not-logged-title {
+    font-size: 2.5rem;
+    margin: 14rem 4rem;
+  }
+  }
 }
 
-// @media (min-width: 1440px) {
-//   .estimate-content {
+@media (min-width: 1440px) {
+  .estimate-content {
+    width: 60rem;  
 
-//   .estimate-title {
-//     padding: 2rem;
-//     font-size: 3rem;
-//   }
+  .estimate-title {
+    padding: 2rem;
+    font-size: 3rem;
+  }
 
-//   .estimate-form {
-//     height: 43rem;
-//     width: 38rem;
-//   }
+  .estimate-form {
+    height: 43rem;
+    width: 38rem;
+  }
 
-//   .estimate-label {
-//     font-size: 1.5rem;
-//   }
+  .estimate-label {
+    font-size: 1.5rem;
+  }
 
-//   .estimate-input {
-//     padding: 1.2rem;
-//     font-size: 1.2rem;
-//   }
+  .estimate-input {
+    padding: 1.2rem;
+    font-size: 1.2rem;
+  }
 
-//   .estimate-button {
-//     width: 15rem;
-//     padding: 1.2rem;
-//     font-size: 1.3rem;
-//   }
-//   }
-// }
+  .estimate-button {
+    width: 15rem;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+  }
+  }
+
+  .not-logged-content {
+    width: 60rem;
+
+  .not-logged-title {
+    font-size: 3rem;
+    margin: 16rem 5rem;
+  }
+  }
+}

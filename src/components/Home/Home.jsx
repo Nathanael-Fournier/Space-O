@@ -9,7 +9,7 @@ import HomeParts from './HomeParts';
 
 const Home = () => {
   return (
-    <>
+    <div className="home-content">
       <HomeParts
         name="first-image"
         image={illustration}
@@ -43,7 +43,7 @@ const Home = () => {
         link="/vaisseaux"
         button="Voir les Vaisseaux"
       />
-    </>
+    </div>
   );
 };
 

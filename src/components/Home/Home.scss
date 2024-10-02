@@ -4,6 +4,10 @@
 COMPOSANT HOME.JSX
 */
 
+.home-content {
+  margin-bottom: 0.5rem;
+}
+
 /*
 SOUS-COMPOSANT HOMEPARTS.JSX
 */
@@ -62,7 +66,7 @@ SOUS-COMPOSANT HOMEPARTS.JSX
   border: solid 2px v.$whiteColor;
   color: v.$whiteColor;
   font-family: v.$secondaryFont;
-  font-weight: 500;
+  font-size: 0.8rem;
   background-color: v.$color1;
   width: 10rem;
   height: 2.5rem;
@@ -75,6 +79,10 @@ RESPONSIVE
 */
 
 @media (min-width: 480px) {
+  .home-content {
+    margin-bottom: 1.5rem;
+  }
+
   .first-image {
     width: 18rem;
     margin-top: 3rem;
@@ -106,17 +114,21 @@ RESPONSIVE
 }
 
 @media (min-width: 1200px) {
+  .home-content {
+    margin-bottom: 0;
+  }
+
   .home-parts-content {
     flex-direction: row;
     margin: 5rem 10rem;
   }
 
-  .home-parts-content:nth-child(3) {
+  .home-parts-content:nth-child(2) {
     flex-direction: row-reverse;
     margin-top: 7rem;
   }
 
-  .home-parts-content:nth-child(4) {
+  .home-parts-content:nth-child(3) {
     margin-top: 7rem;
     margin-bottom: 7rem;
   }
@@ -148,6 +160,8 @@ RESPONSIVE
     height: 4rem;
     margin-top: 2.5rem;
     border-radius: 30px;
+    font-size: v.$homeFontSize;
+    font-weight: 500;
     transition: 0.2s;
   }
 

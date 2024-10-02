@@ -9,6 +9,7 @@
   width: 22rem;
   margin: auto;
   flex: 1;
+  margin-bottom: 1.5rem;
 
 .planet-detail-title-picture-div {
   display: flex;
@@ -68,6 +69,7 @@
 @media (min-width: 480px) {
   .planet-detail-content {
     width: 29rem;
+    margin-bottom: 2rem;
 
   .planet-detail-picture {
     height: 29rem;
@@ -106,6 +108,7 @@
 @media (min-width: 768px) {
   .planet-detail-content {
     width: 46rem;
+    margin-bottom: 2.5rem;
 
   .planet-detail-picture {
     height: 45rem;
@@ -146,6 +149,7 @@
 @media (min-width: 1024px) {
   .planet-detail-content {
     width: 50rem;
+    margin-bottom: 3rem;
 
   .planet-detail-picture {
     height: 50rem;
