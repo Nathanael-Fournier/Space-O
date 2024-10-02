@@ -21,7 +21,14 @@ const Navbar = () => {
           <NavbarLink link="/planetes" image={planete} title="Planètes" />
           <NavbarLink link="/vaisseaux" image={vaisseau} title="Vaisseaux" />
           <NavbarLink link="/devis" image={devis} title="Devis" />
-          <NavbarLink link="/mon-compte" image={login} title="Login" />
+          <button type="button" className="navbar-link login-button">
+            <img
+              className="navbar-link-icon"
+              src={login}
+              alt="Icone de navigation"
+            />
+            Login
+          </button>
         </div>
       </nav>
     </header>

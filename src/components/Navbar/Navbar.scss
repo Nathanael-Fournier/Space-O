@@ -50,6 +50,14 @@ SOUS-COMPOSANT NAVBARLINK.JSX
   border-radius: calc(v.$homeFontSize / 4);
 }
 
+.login-button {
+  border: none;
+}
+
+// .login-button:focus {
+//   border: solid 1px v.$whiteColor;
+// }
+
 .navbar-link--selected {
   border: solid 1px v.$whiteColor;
 }
