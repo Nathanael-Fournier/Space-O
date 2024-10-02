@@ -13,6 +13,7 @@ import Ship from '../Ship/Ship';
 import ShipDetail from '../ShipDetail/ShipDetail';
 import PilotDetail from '../PilotDetail/PilotDetail';
 import Estimate from '../Estimate/Estimate';
+import Login from '../Login/Login';
 import Error from '../Error/Error';
 import Footer from '../Footer/Footer';
 
@@ -24,6 +25,7 @@ function App() {
   const [loadingShips, setLoadingShips] = useState(true);
   const [loadingPlanets, setLoadingPlanets] = useState(true);
   const [isLogged, setIsLogged] = useState(false);
+  const [loginFormIsOpen, setLoginFormIsOpen] = useState(false);
 
   const loadShips = () => {
     axios
@@ -56,7 +58,11 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <Navbar
+        loginFormIsOpen={loginFormIsOpen}
+        setLoginFormIsOpen={setLoginFormIsOpen}
+      />
+      {loginFormIsOpen && <Login loginFormIsOpen={loginFormIsOpen} />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/planetes" element={<Planet planets={planets} />} />

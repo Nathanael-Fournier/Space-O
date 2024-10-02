@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import propTypes from 'prop-types';
+
 import logo from '../../assets/SpaceO.png';
 import planete from '../../assets/svg/planete.svg';
 import vaisseau from '../../assets/svg/vaisseau.svg';
@@ -10,7 +12,11 @@ import './Navbar.scss';
 
 import NavbarLink from './NavbarLink';
 
-const Navbar = () => {
+const Navbar = ({ loginFormIsOpen, setLoginFormIsOpen }) => {
+  const handleLoginClick = () => {
+    setLoginFormIsOpen(!loginFormIsOpen);
+  };
+
   return (
     <header>
       <nav className="navbar">
@@ -21,7 +27,11 @@ const Navbar = () => {
           <NavbarLink link="/planetes" image={planete} title="Planètes" />
           <NavbarLink link="/vaisseaux" image={vaisseau} title="Vaisseaux" />
           <NavbarLink link="/devis" image={devis} title="Devis" />
-          <button type="button" className="navbar-link login-button">
+          <button
+            type="button"
+            className="navbar-link login-button"
+            onClick={handleLoginClick}
+          >
             <img
               className="navbar-link-icon"
               src={login}
@@ -33,6 +43,11 @@ const Navbar = () => {
       </nav>
     </header>
   );
+};
+
+Navbar.propTypes = {
+  loginFormIsOpen: propTypes.bool.isRequired,
+  setLoginFormIsOpen: propTypes.func.isRequired,
 };
 
 export default Navbar;
