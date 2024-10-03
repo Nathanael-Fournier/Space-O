@@ -1,12 +1,23 @@
-import './Login.scss';
+import propTypes from 'prop-types';
 
-const LoginForm = () => {
+import './LoginForm.scss';
+
+const LoginForm = ({ setLoginFormIsOpen, setCreateFormIsOpen }) => {
+  const handleCreateClick = () => {
+    setLoginFormIsOpen(false);
+    setCreateFormIsOpen(true);
+  };
+
   return (
     <div className="loginform-content">
       <button type="button" className="loginform-connect-button">
         Se connecter
       </button>
-      <button type="button" className="loginform-create-button">
+      <button
+        type="button"
+        className="loginform-create-button"
+        onClick={handleCreateClick}
+      >
         Créer un compte
       </button>
       <form className="loginform-form-content">
@@ -34,6 +45,11 @@ const LoginForm = () => {
       </form>
     </div>
   );
+};
+
+LoginForm.propTypes = {
+  setLoginFormIsOpen: propTypes.func.isRequired,
+  setCreateFormIsOpen: propTypes.func.isRequired,
 };
 
 export default LoginForm;

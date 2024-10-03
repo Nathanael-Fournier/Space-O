@@ -1,0 +1,78 @@
+@use '../../../styles/variables' as v;
+
+/*
+COMPOSANT CREATEFORM.JSX
+*/
+
+.createform-content {
+  width: 15rem;
+  height: 27rem;
+  background: linear-gradient(180deg, v.$color3, v.$color1);
+  border: 1px solid v.$greyTextColor;
+  border-radius: 3px;
+  position: fixed;
+  right: 0;
+  margin: 1rem;
+
+  .createform-connect-button {
+    width: 50%;
+    height: 2rem;
+    color: v.$greyTextColor;
+    font-family: v.$secondaryFont;
+    font-size: 0.7rem;
+    border: 1px solid v.$greyTextColor;
+    background-color: v.$color1;
+  }
+
+  .createform-create-button {
+    width: 50%;
+    height: 2rem;
+    color: v.$whiteColor;
+    font-family: v.$secondaryFont;
+    font-size: 0.7rem;
+    border: none;
+    background-color: transparent;
+  }
+
+  .createform-form-content {
+    width: 11rem;
+    height: 23rem;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .createform-form-label {
+    color: v.$whiteColor;
+    font-family: v.$secondaryFont;
+    font-size: 0.7rem;
+  }
+
+  .createform-form-input {
+    width: 10rem;
+    height: 2rem;
+    border: 1px solid v.$whiteColor;
+    font-family: v.$secondaryFont;
+    background-color: transparent;
+    padding: 0.5rem;
+    font-size: 0.7rem;
+    color: v.$whiteColor;
+  }
+
+  .createform-form-input:focus {
+    border: 1px solid v.$orangeColor;
+  }
+
+  .createform-form-submit-button {
+    width: 6rem;
+    height: 2rem;
+    margin: 1rem auto 0 auto;
+    border: 1px solid v.$whiteColor;
+    border-radius: 5px;
+    font-family: v.$secondaryFont;
+    font-size: 0.7rem;
+    background-color: transparent;
+    color: v.$whiteColor;
+  }
+}

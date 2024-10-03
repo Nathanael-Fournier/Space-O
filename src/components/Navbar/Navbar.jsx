@@ -12,9 +12,9 @@ import './Navbar.scss';
 
 import NavbarLink from './NavbarLink';
 
-const Navbar = ({ loginFormIsOpen, setLoginFormIsOpen }) => {
+const Navbar = ({ settingsIsOpen, setSettingsIsOpen }) => {
   const handleLoginClick = () => {
-    setLoginFormIsOpen(!loginFormIsOpen);
+    setSettingsIsOpen(!settingsIsOpen);
   };
 
   return (
@@ -46,8 +46,8 @@ const Navbar = ({ loginFormIsOpen, setLoginFormIsOpen }) => {
 };
 
 Navbar.propTypes = {
-  loginFormIsOpen: propTypes.bool.isRequired,
-  setLoginFormIsOpen: propTypes.func.isRequired,
+  settingsIsOpen: propTypes.bool.isRequired,
+  setSettingsIsOpen: propTypes.func.isRequired,
 };
 
 export default Navbar;

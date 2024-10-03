@@ -24,8 +24,8 @@ function App() {
   const [planets, setPlanets] = useState([]);
   const [loadingShips, setLoadingShips] = useState(true);
   const [loadingPlanets, setLoadingPlanets] = useState(true);
+  const [settingsIsOpen, setSettingsIsOpen] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
-  const [loginFormIsOpen, setLoginFormIsOpen] = useState(false);
 
   const loadShips = () => {
     axios
@@ -59,10 +59,12 @@ function App() {
   return (
     <div className="App">
       <Navbar
-        loginFormIsOpen={loginFormIsOpen}
-        setLoginFormIsOpen={setLoginFormIsOpen}
+        settingsIsOpen={settingsIsOpen}
+        setSettingsIsOpen={setSettingsIsOpen}
       />
-      {loginFormIsOpen && <Login loginFormIsOpen={loginFormIsOpen} />}
+      {settingsIsOpen && (
+        <Login isLogged={isLogged} setIsLogged={setIsLogged} />
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/planetes" element={<Planet planets={planets} />} />

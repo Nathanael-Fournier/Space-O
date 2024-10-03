@@ -13,7 +13,7 @@
 
 ### Bordel
 
-Le code du composant
+#### Le code du composant
 
 ```jsx
       <video className="home-video" autoPlay loop muted playsInline>
@@ -29,7 +29,7 @@ Le code du composant
       </h1>
 ```
 
-Le code du css du composant
+#### Le code du css du composant
 
 ```css
 .home-video {
@@ -49,4 +49,66 @@ Le code du css du composant
   font-size: calc(v.$homeFontSize * 2);
   text-align: center;
 }
+```
+
+#### A voir pour fermer l'onglet de connexion / création de compte
+
+```jsx
+import { useEffect, useRef } from 'react';
+import propTypes from 'prop-types';
+import LoginForm from './LoginForm/LoginForm';
+import CreateForm from './CreateForm/CreateForm';
+import './Login.scss';
+
+const Login = ({ loginFormIsOpen, setLoginFormIsOpen }) => {
+  const [createFormIsOpen, setCreateFormIsOpen] = useState(false);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      // Vérifie si le clic a eu lieu en dehors de l'élément formRef
+      if (formRef.current && !formRef.current.contains(event.target)) {
+        // Fermer le formulaire si l'utilisateur clique en dehors
+        setLoginFormIsOpen(false);
+        setCreateFormIsOpen(false);
+      }
+    };
+
+    if (loginFormIsOpen || createFormIsOpen) {
+      // Ajoute l'événement de clic au document
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      // Nettoie l'événement lorsque le formulaire est fermé
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [loginFormIsOpen, createFormIsOpen, setLoginFormIsOpen]);
+
+  return (
+    <>
+      {(loginFormIsOpen || createFormIsOpen) && (
+        <div ref={formRef}>
+          {loginFormIsOpen && (
+            <LoginForm
+              loginFormIsOpen={loginFormIsOpen}
+              setLoginFormIsOpen={setLoginFormIsOpen}
+              createFormIsOpen={createFormIsOpen}
+              setCreateFormIsOpen={setCreateFormIsOpen}
+            />
+          )}
+          {createFormIsOpen && <CreateForm />}
+        </div>
+      )}
+    </>
+  );
+};
+
+Login.propTypes = {
+  loginFormIsOpen: propTypes.bool.isRequired,
+  setLoginFormIsOpen: propTypes.func.isRequired,
+};
+
+export default Login;
+
 ```
