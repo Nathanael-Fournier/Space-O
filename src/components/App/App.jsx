@@ -63,7 +63,12 @@ function App() {
         setSettingsIsOpen={setSettingsIsOpen}
       />
       {settingsIsOpen && (
-        <Login isLogged={isLogged} setIsLogged={setIsLogged} />
+        <Login
+          isLogged={isLogged}
+          setIsLogged={setIsLogged}
+          // A garder ?
+          setSettingsIsOpen={setSettingsIsOpen}
+        />
       )}
       <Routes>
         <Route path="/" element={<Home />} />

@@ -7,19 +7,31 @@ import CreateForm from './CreateForm/CreateForm';
 
 import './Login.scss';
 
-const Login = ({ isLogged, setIsLogged }) => {
+const Login = ({ isLogged, setIsLogged, setSettingsIsOpen }) => {
   const [loginFormIsOpen, setLoginFormIsOpen] = useState(true);
   const [createFormIsOpen, setCreateFormIsOpen] = useState(false);
+  const [userJWT, setUserJWT] = useState('');
+  const [userData, setUserData] = useState({});
 
   return (
     <>
-      {loginFormIsOpen && (
+      {loginFormIsOpen && !isLogged && (
         <LoginForm
+          setIsLogged={setIsLogged}
+          // A garder ?
+          setSettingsIsOpen={setSettingsIsOpen}
           setLoginFormIsOpen={setLoginFormIsOpen}
           setCreateFormIsOpen={setCreateFormIsOpen}
+          // A garder ?
+          userJWT={userJWT}
+          setUserJWT={setUserJWT}
+          // A garder ?
+          userData={userData}
+          // A garder ?
+          setUserData={setUserData}
         />
       )}
-      {createFormIsOpen && (
+      {createFormIsOpen && !isLogged && (
         <CreateForm
           setLoginFormIsOpen={setLoginFormIsOpen}
           setCreateFormIsOpen={setCreateFormIsOpen}
@@ -32,6 +44,7 @@ const Login = ({ isLogged, setIsLogged }) => {
 Login.propTypes = {
   isLogged: propTypes.bool.isRequired,
   setIsLogged: propTypes.func.isRequired,
+  setSettingsIsOpen: propTypes.func.isRequired,
 };
 
 export default Login;
