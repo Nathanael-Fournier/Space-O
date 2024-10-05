@@ -112,3 +112,17 @@ Login.propTypes = {
 export default Login;
 
 ```
+
+#### Recuperation des données de l'utilisateur
+
+```jsx
+  const saveUserData = () => {
+    axios
+      .get('http://localhost:8000/api/v1/login', {
+        headers: { Authorization: `Bearer ${userJWT}` },
+      })
+      .then((response) => {
+        setUserData(response.data);
+      });
+  };
+```

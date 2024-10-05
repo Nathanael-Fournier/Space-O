@@ -7,13 +7,10 @@ import './LoginForm.scss';
 
 const LoginForm = ({
   setIsLogged,
-  // setSettingsIsOpen,
+  setSettingsIsOpen,
   setLoginFormIsOpen,
   setCreateFormIsOpen,
-  // userJWT,
   setUserJWT,
-  // userData,
-  // setUserData,
 }) => {
   const [loginEmailValue, setLoginEmailValue] = useState('');
   const [loginPasswordValue, setLoginPasswordValue] = useState('');
@@ -29,25 +26,13 @@ const LoginForm = ({
       })
       .finally(() => {
         setIsLogged(true);
-        // Fermer les form pour afficher celui connecté
       });
   };
-
-  // const saveUserData = () => {
-  //   axios
-  //     .get('http://localhost:8000/api/v1/login', {
-  //       headers: { Authorization: `Bearer ${userJWT}` },
-  //     })
-  //     .then((response) => {
-  //       setUserData(response.data);
-  //     });
-  // };
 
   const submitLoginForm = (event) => {
     event.preventDefault();
     saveUserToken();
-    // setSettingsIsOpen(false);
-    // saveUserData();
+    setSettingsIsOpen(false);
   };
 
   const handleCreateClick = () => {
@@ -104,16 +89,10 @@ const LoginForm = ({
 
 LoginForm.propTypes = {
   setIsLogged: propTypes.func.isRequired,
-  // setSettingsIsOpen: propTypes.func.isRequired,
+  setSettingsIsOpen: propTypes.func.isRequired,
   setLoginFormIsOpen: propTypes.func.isRequired,
   setCreateFormIsOpen: propTypes.func.isRequired,
-  // userJWT: propTypes.string.isRequired,
   setUserJWT: propTypes.func.isRequired,
-  // userData: propTypes.shape({
-  //   firstname: propTypes.string,
-  //   lastname: propTypes.string,
-  // }).isRequired,
-  // setUserData: propTypes.func.isRequired,
 };
 
 export default LoginForm;

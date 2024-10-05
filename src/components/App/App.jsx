@@ -59,6 +59,7 @@ function App() {
   return (
     <div className="App">
       <Navbar
+        isLogged={isLogged}
         settingsIsOpen={settingsIsOpen}
         setSettingsIsOpen={setSettingsIsOpen}
       />

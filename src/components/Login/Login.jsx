@@ -4,6 +4,7 @@ import propTypes from 'prop-types';
 
 import LoginForm from './LoginForm/LoginForm';
 import CreateForm from './CreateForm/CreateForm';
+import UserLogged from './UserLogged/UserLogged';
 
 import './Login.scss';
 
@@ -11,30 +12,29 @@ const Login = ({ isLogged, setIsLogged, setSettingsIsOpen }) => {
   const [loginFormIsOpen, setLoginFormIsOpen] = useState(true);
   const [createFormIsOpen, setCreateFormIsOpen] = useState(false);
   const [userJWT, setUserJWT] = useState('');
-  const [userData, setUserData] = useState({});
 
   return (
     <>
       {loginFormIsOpen && !isLogged && (
         <LoginForm
           setIsLogged={setIsLogged}
-          // A garder ?
           setSettingsIsOpen={setSettingsIsOpen}
           setLoginFormIsOpen={setLoginFormIsOpen}
           setCreateFormIsOpen={setCreateFormIsOpen}
-          // A garder ?
-          userJWT={userJWT}
           setUserJWT={setUserJWT}
-          // A garder ?
-          userData={userData}
-          // A garder ?
-          setUserData={setUserData}
         />
       )}
       {createFormIsOpen && !isLogged && (
         <CreateForm
           setLoginFormIsOpen={setLoginFormIsOpen}
           setCreateFormIsOpen={setCreateFormIsOpen}
+        />
+      )}
+      {isLogged && (
+        <UserLogged
+          setIsLogged={setIsLogged}
+          setSettingsIsOpen={setSettingsIsOpen}
+          setUserJWT={setUserJWT}
         />
       )}
     </>

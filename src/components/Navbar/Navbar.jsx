@@ -12,7 +12,7 @@ import './Navbar.scss';
 
 import NavbarLink from './NavbarLink';
 
-const Navbar = ({ settingsIsOpen, setSettingsIsOpen }) => {
+const Navbar = ({ isLogged, settingsIsOpen, setSettingsIsOpen }) => {
   const handleLoginClick = () => {
     setSettingsIsOpen(!settingsIsOpen);
   };
@@ -27,18 +27,34 @@ const Navbar = ({ settingsIsOpen, setSettingsIsOpen }) => {
           <NavbarLink link="/planetes" image={planete} title="Planètes" />
           <NavbarLink link="/vaisseaux" image={vaisseau} title="Vaisseaux" />
           <NavbarLink link="/devis" image={devis} title="Devis" />
-          <button
-            type="button"
-            className="navbar-link login-button"
-            onClick={handleLoginClick}
-          >
-            <img
-              className="navbar-link-icon"
-              src={login}
-              alt="Icone de navigation"
-            />
-            Login
-          </button>
+          {isLogged && (
+            <button
+              type="button"
+              className="navbar-link login-button"
+              onClick={handleLoginClick}
+            >
+              <img
+                className="navbar-link-icon"
+                src={login}
+                alt="Icone de navigation"
+              />
+              Logout
+            </button>
+          )}
+          {!isLogged && (
+            <button
+              type="button"
+              className="navbar-link login-button"
+              onClick={handleLoginClick}
+            >
+              <img
+                className="navbar-link-icon"
+                src={login}
+                alt="Icone de navigation"
+              />
+              Login
+            </button>
+          )}
         </div>
       </nav>
     </header>
@@ -46,6 +62,7 @@ const Navbar = ({ settingsIsOpen, setSettingsIsOpen }) => {
 };
 
 Navbar.propTypes = {
+  isLogged: propTypes.func.isRequired,
   settingsIsOpen: propTypes.bool.isRequired,
   setSettingsIsOpen: propTypes.func.isRequired,
 };

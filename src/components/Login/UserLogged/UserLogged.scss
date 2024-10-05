@@ -1,0 +1,48 @@
+@use '../../../styles/variables' as v;
+
+/*
+COMPOSANT USERLOGGED.JSX
+*/
+
+.user-logged-content {
+  width: 9rem;
+  height: 8rem;
+  background: linear-gradient(180deg, v.$color3, v.$color1);
+  border: 1px solid v.$greyTextColor;
+  border-radius: 3px;
+  position: fixed;
+  right: 0;
+  margin: 1rem;
+  display: flex;
+  // align-items: center;
+  flex-direction: column;
+  // justify-content: space-around;
+
+  // .user-logged-message {
+
+  // }
+
+  .user-logged-estimate-button {
+    width: 6rem;
+    height: 2rem;
+    margin: auto;
+    border: 1px solid v.$whiteColor;
+    border-radius: 5px;
+    font-family: v.$secondaryFont;
+    font-size: 0.7rem;
+    background-color: v.$orangeColor;
+    color: v.$whiteColor;
+  }
+
+  .user-logged-logout-button {
+    width: 7rem;
+    height: 2rem;
+    margin: auto;
+    border: 1px solid v.$whiteColor;
+    border-radius: 5px;
+    font-family: v.$secondaryFont;
+    font-size: 0.7rem;
+    background-color: transparent;
+    color: v.$whiteColor;
+  }
+}
