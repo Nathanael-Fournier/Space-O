@@ -72,7 +72,89 @@ COMPOSANT CREATEFORM.JSX
     border-radius: 5px;
     font-family: v.$secondaryFont;
     font-size: 0.7rem;
-    background-color: transparent;
+    background-color: v.$orangeColor;
     color: v.$whiteColor;
+  }
+}
+
+/*
+RESPONSIVE
+*/
+
+@media (min-width:768px) {
+  .createform-content {
+    width: 16rem;
+    height: 32rem;
+  
+    .createform-connect-button {
+      height: 2.5rem;
+      font-size: 0.8rem;
+    }
+  
+    .createform-create-button {
+      height: 2.5rem;
+      font-size: 0.8rem;
+    }
+  
+    .createform-form-content {
+      width: 12rem;
+      height: 27rem;
+    }
+  
+    .createform-form-label {
+      font-size: 0.8rem;
+    }
+  
+    .createform-form-input {
+      width: 11rem;
+      height: 2.5rem;
+      padding: 0.75rem;
+      font-size: 0.8rem;
+    }
+  
+    .createform-form-submit-button {
+      width: 7rem;
+      height: 2.5rem;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (min-width:1200px) {
+  .createform-content {
+    width: 19rem;
+    height: 37rem;
+  
+    .createform-connect-button {
+      height: 3rem;
+      font-size: 0.9rem;
+    }
+  
+    .createform-create-button {
+      height: 3rem;
+      font-size: 0.9rem;
+    }
+  
+    .createform-form-content {
+      width: 15rem;
+      height: 32rem;
+    }
+  
+    .createform-form-label {
+      font-size: 0.9rem;
+    }
+  
+    .createform-form-input {
+      width: 13rem;
+      height: 3rem;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .createform-form-submit-button {
+      width: 8rem;
+      height: 2.75rem;
+      font-size: 0.9rem;
+    }
   }
 }

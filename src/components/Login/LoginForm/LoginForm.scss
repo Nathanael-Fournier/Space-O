@@ -35,8 +35,8 @@ COMPOSANT LOGINFORM.JSX
   }
 
   .loginform-form-content {
-    width: 11rem;
-    height: 12rem;
+    width: 12rem;
+    height: 13rem;
     margin: 1rem auto;
     display: flex;
     flex-direction: column;
@@ -72,7 +72,89 @@ COMPOSANT LOGINFORM.JSX
     border-radius: 5px;
     font-family: v.$secondaryFont;
     font-size: 0.7rem;
-    background-color: transparent;
+    background-color: v.$orangeColor;
     color: v.$whiteColor;
+  }
+}
+
+/*
+RESPONSIVE
+*/
+
+@media (min-width:768px) {
+  .loginform-content {
+    width: 16rem;
+    height: 19rem;
+
+  .loginform-connect-button {
+    height: 2.5rem;
+    font-size: 0.8rem;
+  }
+
+  .loginform-create-button {
+    height: 2.5rem;
+    font-size: 0.8rem;
+  }
+
+  .loginform-form-content {
+    width: 12rem;
+    height: 14rem;
+  }
+
+  .loginform-form-label {
+    font-size: 0.8rem;
+  }
+
+  .loginform-form-input {
+    width: 11rem;
+    height: 2.5rem;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .loginform-form-submit-button {
+    width: 7rem;
+    height: 2.5rem;
+    font-size: 0.8rem;
+  }
+  }
+}
+
+@media (min-width:1200px) {
+  .loginform-content {
+    width: 19rem;
+    height: 21rem;
+
+  .loginform-connect-button {
+    height: 3rem;
+    font-size: 0.9rem;
+  }
+
+  .loginform-create-button {
+    height: 3rem;
+    font-size: 0.9rem;
+  }
+
+  .loginform-form-content {
+    width: 15rem;
+    height: 16rem;
+  }
+
+  .loginform-form-label {
+    font-size: 0.9rem;
+  }
+
+  .loginform-form-input {
+    width: 13rem;
+    height: 3rem;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .loginform-form-submit-button {
+    width: 8rem;
+    height: 2.75rem;
+    font-size: 0.9rem;
+  }
   }
 }
