@@ -62,7 +62,7 @@ const Navbar = ({ isLogged, settingsIsOpen, setSettingsIsOpen }) => {
 };
 
 Navbar.propTypes = {
-  isLogged: propTypes.func.isRequired,
+  isLogged: propTypes.bool.isRequired,
   settingsIsOpen: propTypes.bool.isRequired,
   setSettingsIsOpen: propTypes.func.isRequired,
 };

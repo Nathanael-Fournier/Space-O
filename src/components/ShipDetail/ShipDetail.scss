@@ -195,11 +195,15 @@
     display: unset;
   }
 
-  .ship-detail-picture {
+  .ship-detail-img-div {
     float: left;
+    // min-height: 100%; ??
+    margin: 10rem 3rem 20rem 5rem;
+  }
+
+  .ship-detail-picture {
     width: 30rem;
     height: 30rem;
-    margin: 10rem 3rem 0 5rem;
   }
 
   .ship-detail-main-title {
@@ -245,11 +249,14 @@
 @media (min-width: 1440px) {
   .ship-detail-content {
     width: 100vw;
+
+  .ship-detail-img-div {
+    margin: 12rem 4rem 15rem 5rem;
+  }
   
   .ship-detail-picture {
     width: 40rem;
     height: 40rem;
-    margin: 8rem 4rem 15rem 5rem;
   }
 
   .ship-detail-main-title {

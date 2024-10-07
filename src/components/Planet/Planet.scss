@@ -34,7 +34,6 @@ SOUS-COMPOSANT PLANETCARD.JSX
   height: 33rem;
   width: 20rem;
   margin: 1rem auto 1rem auto;
-  // PLACER TRANSITION AILLEURS NON ??
   transition: 0.3s ease-in-out;
 }
 
@@ -49,7 +48,7 @@ SOUS-COMPOSANT PLANETCARD.JSX
 }
 
 .Soleil {
-  padding: 0.8rem;
+  padding: 0.5rem;
 }
 
 .Mercure {
@@ -89,7 +88,7 @@ SOUS-COMPOSANT PLANETCARD.JSX
 }
 
 .Soleil:hover {
-  padding: 0.3rem;
+  padding: 0;
 }
 
 .Mercure:hover {
