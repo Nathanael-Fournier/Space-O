@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import propTypes from 'prop-types';
-
 import axios from 'axios';
 
-import './UserEstimate.scss';
 import EachEstimate from './EachEstimate';
 
-const UserEstimate = ({ userJWT }) => {
+import './UserEstimate.scss';
+
+const UserEstimate = ({ userJWT, isLogged }) => {
   const [trips, setTrips] = useState([]);
 
   useEffect(() => {
@@ -23,17 +23,25 @@ const UserEstimate = ({ userJWT }) => {
     loadTrips();
   }, [userJWT]);
 
-  return (
+  return isLogged ? (
     <div className="user-estimate-content">
+      <h1 className="user-estimate-title">Mes devis</h1>
       {trips.map((currentTrip) => (
         <EachEstimate key={currentTrip.id} {...currentTrip} />
       ))}
+    </div>
+  ) : (
+    <div className="user-not-logged-content">
+      <h1 className="user-not-logged-title">
+        Veuillez vous connecter pour accéder à vos devis
+      </h1>
     </div>
   );
 };
 
 UserEstimate.propTypes = {
   userJWT: propTypes.string.isRequired,
+  isLogged: propTypes.bool.isRequired,
 };
 
 export default UserEstimate;

@@ -94,7 +94,10 @@ function App() {
             <Estimate planets={planets} ships={ships} isLogged={isLogged} />
           }
         />
-        <Route path="/mes-devis" element={<UserEstimate userJWT={userJWT} />} />
+        <Route
+          path="/mes-devis"
+          element={<UserEstimate userJWT={userJWT} isLogged={isLogged} />}
+        />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
