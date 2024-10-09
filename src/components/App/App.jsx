@@ -13,6 +13,7 @@ import Ship from '../Ship/Ship';
 import ShipDetail from '../ShipDetail/ShipDetail';
 import PilotDetail from '../PilotDetail/PilotDetail';
 import Estimate from '../Estimate/Estimate';
+import UserEstimate from '../Estimate/UserEstimate/UserEstimate';
 import Login from '../Login/Login';
 import Error from '../Error/Error';
 import Footer from '../Footer/Footer';
@@ -93,6 +94,7 @@ function App() {
             <Estimate planets={planets} ships={ships} isLogged={isLogged} />
           }
         />
+        <Route path="/mes-devis" element={<UserEstimate userJWT={userJWT} />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

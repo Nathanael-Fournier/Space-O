@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import propTypes from 'prop-types';
 
 import './UserLogged.scss';
@@ -12,9 +14,9 @@ const UserLogged = ({ setIsLogged, setSettingsIsOpen, setUserJWT }) => {
   return (
     <div className="user-logged-content">
       {/* <p className="user-logged-message">Bonjour Mr ?</p> */}
-      <button className="user-logged-estimate-button" type="button">
+      <Link to="/mes-devis" className="user-logged-estimate-button">
         Vos devis
-      </button>
+      </Link>
       <button
         className="user-logged-logout-button"
         type="button"

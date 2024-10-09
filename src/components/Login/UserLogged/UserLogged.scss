@@ -32,6 +32,9 @@ COMPOSANT USERLOGGED.JSX
     font-size: 0.7rem;
     background-color: v.$orangeColor;
     color: v.$whiteColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .user-logged-logout-button {
