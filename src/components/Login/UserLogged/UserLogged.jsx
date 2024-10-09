@@ -15,14 +15,14 @@ const UserLogged = ({ setIsLogged, setSettingsIsOpen, setUserJWT }) => {
     <div className="user-logged-content">
       {/* <p className="user-logged-message">Bonjour Mr ?</p> */}
       <Link to="/mes-devis" className="user-logged-estimate-button">
-        Vos devis
+        Mes devis
       </Link>
       <button
         className="user-logged-logout-button"
         type="button"
         onClick={handleLogout}
       >
-        Se déconnecter
+        Me déconnecter
       </button>
     </div>
   );

@@ -5,47 +5,102 @@ COMPOSANT USERLOGGED.JSX
 */
 
 .user-logged-content {
-  width: 9rem;
-  height: 8rem;
   background: linear-gradient(180deg, v.$color3, v.$color1);
   border: 1px solid v.$greyTextColor;
-  border-radius: 3px;
+  border-radius: 5px;
   position: fixed;
   right: 0;
-  margin: 1rem;
   display: flex;
-  // align-items: center;
   flex-direction: column;
-  // justify-content: space-around;
-
-  // .user-logged-message {
-
-  // }
+  margin: 1rem;
+  width: 9rem;
+  height: 8rem;
 
   .user-logged-estimate-button {
-    width: 6rem;
-    height: 2rem;
     margin: auto;
     border: 1px solid v.$whiteColor;
     border-radius: 5px;
     font-family: v.$secondaryFont;
-    font-size: 0.7rem;
     background-color: v.$orangeColor;
     color: v.$whiteColor;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 6rem;
+    height: 2rem;
+    font-size: 0.7rem;
   }
 
   .user-logged-logout-button {
-    width: 7rem;
-    height: 2rem;
     margin: auto;
     border: 1px solid v.$whiteColor;
     border-radius: 5px;
     font-family: v.$secondaryFont;
-    font-size: 0.7rem;
     background-color: transparent;
     color: v.$whiteColor;
+    width: 7rem;
+    height: 2rem;
+    font-size: 0.7rem;
   }
+}
+
+/*
+RESPONSIVE
+*/
+
+@media (min-width:480px) {
+  .user-logged-content {
+    width: 11rem;
+    height: 9rem;
+
+  .user-logged-estimate-button {
+    width: 6.2rem;
+    height: 2.2rem;
+    font-size: 0.8rem;
+  }
+
+  .user-logged-logout-button {
+    width: 7.5rem;
+    height: 2.2rem;
+    font-size: 0.8rem;
+  }
+}
+}
+
+@media (min-width:768px) {
+  .user-logged-content {
+    width: 12rem;
+    height: 10rem;
+
+  .user-logged-estimate-button {
+    width: 6.5rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  .user-logged-logout-button {
+    width: 8.5rem;
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+}
+}
+
+@media (min-width:1024px) {
+  .user-logged-content {
+    width: 13rem;
+    height: 11rem;
+
+  .user-logged-estimate-button {
+    width: 7rem;
+    height: 2.75rem;
+    font-size: 1rem;
+  }
+
+  .user-logged-logout-button {
+    width: 9.5rem;
+    height: 2.75rem;
+    font-size: 1rem;
+  }
+}
 }

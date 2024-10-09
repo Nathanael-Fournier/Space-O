@@ -7,10 +7,9 @@
 
 - Interaction
   . Une interaction quand le MDP est mauvais
-  . Une interaction qui nous fait comprendre qu'on s'est connecté
   . Une interaction quand on soumet le formulaire de devis
   . Une interaction quand on soumet le formulaire de création de compte
-
+  . Une interaction qui nous fait comprendre qu'on s'est connecté
 
 ## Pourquoi pas
 
@@ -18,7 +17,7 @@
 
 ### Bordel
 
-#### Le code du composant
+#### Le code du composant d'une éventuelle page d'accueil avec une vidéo
 
 ```jsx
       <video className="home-video" autoPlay loop muted playsInline>
@@ -32,9 +31,11 @@
         au <br />
         décollage <br />?
       </h1>
+
+// AFFICHER UN BOUTON QUI EMMENE SUR LA PAGE D'ACCUEIL
 ```
 
-#### Le code du css du composant
+#### Le code du CSS du composant
 
 ```css
 .home-video {
@@ -56,71 +57,11 @@
 }
 ```
 
-#### A voir pour fermer l'onglet de connexion / création de compte
-
-```jsx
-import { useEffect, useRef } from 'react';
-import propTypes from 'prop-types';
-import LoginForm from './LoginForm/LoginForm';
-import CreateForm from './CreateForm/CreateForm';
-import './Login.scss';
-
-const Login = ({ loginFormIsOpen, setLoginFormIsOpen }) => {
-  const [createFormIsOpen, setCreateFormIsOpen] = useState(false);
-  const formRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      // Vérifie si le clic a eu lieu en dehors de l'élément formRef
-      if (formRef.current && !formRef.current.contains(event.target)) {
-        // Fermer le formulaire si l'utilisateur clique en dehors
-        setLoginFormIsOpen(false);
-        setCreateFormIsOpen(false);
-      }
-    };
-
-    if (loginFormIsOpen || createFormIsOpen) {
-      // Ajoute l'événement de clic au document
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-
-    return () => {
-      // Nettoie l'événement lorsque le formulaire est fermé
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [loginFormIsOpen, createFormIsOpen, setLoginFormIsOpen]);
-
-  return (
-    <>
-      {(loginFormIsOpen || createFormIsOpen) && (
-        <div ref={formRef}>
-          {loginFormIsOpen && (
-            <LoginForm
-              loginFormIsOpen={loginFormIsOpen}
-              setLoginFormIsOpen={setLoginFormIsOpen}
-              createFormIsOpen={createFormIsOpen}
-              setCreateFormIsOpen={setCreateFormIsOpen}
-            />
-          )}
-          {createFormIsOpen && <CreateForm />}
-        </div>
-      )}
-    </>
-  );
-};
-
-Login.propTypes = {
-  loginFormIsOpen: propTypes.bool.isRequired,
-  setLoginFormIsOpen: propTypes.func.isRequired,
-};
-
-export default Login;
-
-```
-
 #### Recuperation des données de l'utilisateur
 
 ```jsx
+// OU PLACER CA ET QUAND RECUPERER SES DONNEES ET LES RETRANSMETTRE PLUS TARD
+
   const saveUserData = () => {
     axios
       .get('http://localhost:8000/api/v1/login', {
