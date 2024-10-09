@@ -26,6 +26,7 @@ function App() {
   const [loadingPlanets, setLoadingPlanets] = useState(true);
   const [settingsIsOpen, setSettingsIsOpen] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
+  const [userJWT, setUserJWT] = useState('');
 
   const loadShips = () => {
     axios
@@ -67,8 +68,8 @@ function App() {
         <Login
           isLogged={isLogged}
           setIsLogged={setIsLogged}
-          // A garder ?
           setSettingsIsOpen={setSettingsIsOpen}
+          setUserJWT={setUserJWT}
         />
       )}
       <Routes>

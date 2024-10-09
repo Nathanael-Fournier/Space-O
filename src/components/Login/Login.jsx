@@ -8,10 +8,9 @@ import UserLogged from './UserLogged/UserLogged';
 
 import './Login.scss';
 
-const Login = ({ isLogged, setIsLogged, setSettingsIsOpen }) => {
+const Login = ({ isLogged, setIsLogged, setSettingsIsOpen, setUserJWT }) => {
   const [loginFormIsOpen, setLoginFormIsOpen] = useState(true);
   const [createFormIsOpen, setCreateFormIsOpen] = useState(false);
-  const [userJWT, setUserJWT] = useState('');
 
   return (
     <>
@@ -46,6 +45,7 @@ Login.propTypes = {
   isLogged: propTypes.bool.isRequired,
   setIsLogged: propTypes.func.isRequired,
   setSettingsIsOpen: propTypes.func.isRequired,
+  setUserJWT: propTypes.func.isRequired,
 };
 
 export default Login;
