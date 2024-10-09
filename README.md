@@ -5,7 +5,12 @@
 - RESPONSIVE
   . Toujours vérifier si tout est correct
 
-  - Faire une classe pour chaque planète pour avoir la meme taille d'image ?
+- Interaction
+  . Une interaction quand le MDP est mauvais
+  . Une interaction qui nous fait comprendre qu'on s'est connecté
+  . Une interaction quand on soumet le formulaire de devis
+  . Une interaction quand on soumet le formulaire de création de compte
+
 
 ## Pourquoi pas
 

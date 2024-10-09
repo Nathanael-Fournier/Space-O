@@ -12,8 +12,7 @@ const Estimate = ({ planets, ships, isLogged }) => {
   const [planetInput, setPlanetInput] = useState('');
   const [shipInput, setShipInput] = useState('');
 
-  const submitForm = (event) => {
-    event.preventDefault();
+  const createTrip = () => {
     axios.post('http://localhost:8000/api/v1/trip', {
       traveler_number: travelersInput,
       departure_date: dateInput,
@@ -25,6 +24,17 @@ const Estimate = ({ planets, ships, isLogged }) => {
     });
   };
 
+  const submitForm = (event) => {
+    event.preventDefault();
+    createTrip();
+    // Temporaire
+    setTravelersInput('');
+    setDateInput('');
+    setPlanetInput('');
+    setShipInput('');
+    // Trouver une solution pour changer l'affichage du form une fois soumis
+  };
+
   return isLogged ? (
     <div className="estimate-content">
       <h1 className="estimate-title">Paré au décollage ?</h1>
@@ -33,6 +43,7 @@ const Estimate = ({ planets, ships, isLogged }) => {
           Nombre de voyageurs
         </label>
         <input
+          required
           className="estimate-input"
           id="travelers"
           type="number"
@@ -46,6 +57,7 @@ const Estimate = ({ planets, ships, isLogged }) => {
           Date de départ
         </label>
         <input
+          required
           className="estimate-input"
           id="date"
           type="date"
@@ -58,6 +70,7 @@ const Estimate = ({ planets, ships, isLogged }) => {
           Destination{' '}
         </label>
         <select
+          required
           className="estimate-input"
           id="destination"
           value={planetInput}
@@ -76,6 +89,7 @@ const Estimate = ({ planets, ships, isLogged }) => {
           Vaisseau{' '}
         </label>
         <select
+          required
           className="estimate-input"
           id="ships"
           value={shipInput}

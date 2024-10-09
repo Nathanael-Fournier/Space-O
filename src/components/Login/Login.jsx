@@ -26,6 +26,7 @@ const Login = ({ isLogged, setIsLogged, setSettingsIsOpen }) => {
       )}
       {createFormIsOpen && !isLogged && (
         <CreateForm
+          setSettingsIsOpen={setSettingsIsOpen}
           setLoginFormIsOpen={setLoginFormIsOpen}
           setCreateFormIsOpen={setCreateFormIsOpen}
         />

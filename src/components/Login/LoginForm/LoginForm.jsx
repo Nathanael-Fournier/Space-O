@@ -23,16 +23,16 @@ const LoginForm = ({
       })
       .then((response) => {
         setUserJWT(response.data.token);
-      })
-      .finally(() => {
         setIsLogged(true);
+        setSettingsIsOpen(false);
       });
   };
 
   const submitLoginForm = (event) => {
     event.preventDefault();
-    saveUserToken();
-    setSettingsIsOpen(false);
+    if (loginEmailValue && loginPasswordValue !== '') {
+      saveUserToken();
+    }
   };
 
   const handleCreateClick = () => {
@@ -57,8 +57,9 @@ const LoginForm = ({
           Adresse Email
         </label>
         <input
+          required
           className="loginform-form-input"
-          type="text"
+          type="email"
           placeholder="astronaute@spacial.fr"
           id="mail"
           value={loginEmailValue}
@@ -70,6 +71,7 @@ const LoginForm = ({
           Mot de passe
         </label>
         <input
+          required
           className="loginform-form-input"
           type="password"
           placeholder="Secret Spatial"

@@ -1,8 +1,48 @@
 import propTypes from 'prop-types';
+import axios from 'axios';
 
 import './CreateForm.scss';
+import { useState } from 'react';
 
-const CreateForm = ({ setLoginFormIsOpen, setCreateFormIsOpen }) => {
+const CreateForm = ({
+  setSettingsIsOpen,
+  setLoginFormIsOpen,
+  setCreateFormIsOpen,
+}) => {
+  const [createLastnameValue, setCreateLastnameValue] = useState('');
+  const [createFirstnameValue, setCreateFirstnameValue] = useState('');
+  const [createPhoneNumberValue, setCreatePhoneNumberValue] = useState('');
+  const [createEmailValue, setCreateEmailValue] = useState('');
+  const [createPasswordValue, setCreatePasswordValue] = useState('');
+
+  const createUser = () => {
+    axios
+      .post('http://localhost:8000/api/v1/user', {
+        email: createEmailValue,
+        roles: ['ROLE_USER'],
+        password: createPasswordValue,
+        firstname: createFirstnameValue,
+        lastname: createLastnameValue,
+        phone_number: createPhoneNumberValue,
+      })
+      .then(() => {
+        setSettingsIsOpen(false);
+      });
+  };
+
+  const submitCreateForm = (event) => {
+    event.preventDefault();
+    if (
+      createLastnameValue &&
+      createFirstnameValue &&
+      createPhoneNumberValue &&
+      createEmailValue &&
+      createPasswordValue !== ''
+    ) {
+      createUser();
+    }
+  };
+
   const handleConnectClick = () => {
     setLoginFormIsOpen(true);
     setCreateFormIsOpen(false);
@@ -20,51 +60,82 @@ const CreateForm = ({ setLoginFormIsOpen, setCreateFormIsOpen }) => {
       <button type="button" className="createform-create-button">
         Créer un compte
       </button>
-      <form className="createform-form-content">
+      <form className="createform-form-content" onSubmit={submitCreateForm}>
         <label className="createform-form-label" htmlFor="lastname">
           Nom
         </label>
         <input
+          required
+          pattern="^[a-zA-Z0-9_]{3,30}$"
           className="createform-form-input"
           type="text"
           placeholder="ex: Pesquet"
           id="lastname"
+          value={createLastnameValue}
+          onChange={(event) => {
+            setCreateLastnameValue(event.target.value);
+          }}
         />
         <label className="createform-form-label" htmlFor="firstname">
           Prénom
         </label>
         <input
+          required
+          pattern="^[a-zA-Z0-9_]{3,30}$"
           className="createform-form-input"
           type="text"
           placeholder="ex: Thomas"
           id="firstname"
+          value={createFirstnameValue}
+          onChange={(event) => {
+            setCreateFirstnameValue(event.target.value);
+          }}
         />
         <label className="createform-form-label" htmlFor="phone-number">
           Numéro de téléphone
         </label>
         <input
+          required
+          // pattern="^\+?[0-9]\d{9,20}$"
           className="createform-form-input"
           type="tel"
           placeholder="ex: 01 23 45 67 89"
           id="phone-number"
+          value={createPhoneNumberValue}
+          onChange={(event) => {
+            setCreatePhoneNumberValue(event.target.value);
+          }}
         />
         <label className="createform-form-label" htmlFor="mail">
           Adresse Email
         </label>
         <input
+          required
+          pattern="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$"
           className="createform-form-input"
-          type="text"
+          type="email"
           placeholder="ex: astronaute@spacial.fr"
           id="mail"
+          value={createEmailValue}
+          onChange={(event) => {
+            setCreateEmailValue(event.target.value);
+          }}
         />
         <label className="createform-form-label" htmlFor="password">
           Mot de passe
         </label>
         <input
+          required
+          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
+          title="1 chiffre, 1 lettre et 8 caractères minimums"
           className="createform-form-input"
           type="password"
           placeholder="ex: Secret Spatial"
           id="password"
+          value={createPasswordValue}
+          onChange={(event) => {
+            setCreatePasswordValue(event.target.value);
+          }}
         />
         <button className="createform-form-submit-button" type="submit">
           Se connecter
@@ -75,6 +146,7 @@ const CreateForm = ({ setLoginFormIsOpen, setCreateFormIsOpen }) => {
 };
 
 CreateForm.propTypes = {
+  setSettingsIsOpen: propTypes.func.isRequired,
   setLoginFormIsOpen: propTypes.func.isRequired,
   setCreateFormIsOpen: propTypes.func.isRequired,
 };
