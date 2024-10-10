@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react';
 
 import propTypes from 'prop-types';
@@ -25,10 +26,15 @@ const UserEstimate = ({ userJWT, isLogged }) => {
 
   return isLogged ? (
     <div className="user-estimate-content">
-      <h1 className="user-estimate-title">Mes devis</h1>
-      {trips.map((currentTrip) => (
-        <EachEstimate key={currentTrip.id} {...currentTrip} />
-      ))}
+      {trips.length === 0 ? (
+        <h1 className="user-estimate-title">Vous n'avez pas encore de devis</h1>
+      ) : (
+        (<h1 className="user-estimate-title">Mes devis</h1>)(
+          trips.map((currentTrip) => (
+            <EachEstimate key={currentTrip.id} {...currentTrip} />
+          ))
+        )
+      )}
     </div>
   ) : (
     <div className="user-not-logged-content">

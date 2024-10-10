@@ -11,6 +11,7 @@ const LoginForm = ({
   setLoginFormIsOpen,
   setCreateFormIsOpen,
   setUserJWT,
+  setUserEmail,
 }) => {
   const [loginEmailValue, setLoginEmailValue] = useState('');
   const [loginPasswordValue, setLoginPasswordValue] = useState('');
@@ -23,6 +24,7 @@ const LoginForm = ({
       })
       .then((response) => {
         setUserJWT(response.data.token);
+        setUserEmail(loginEmailValue);
         setIsLogged(true);
         setSettingsIsOpen(false);
       });
@@ -95,6 +97,7 @@ LoginForm.propTypes = {
   setLoginFormIsOpen: propTypes.func.isRequired,
   setCreateFormIsOpen: propTypes.func.isRequired,
   setUserJWT: propTypes.func.isRequired,
+  setUserEmail: propTypes.func.isRequired,
 };
 
 export default LoginForm;

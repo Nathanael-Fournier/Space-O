@@ -6,7 +6,7 @@ import axios from 'axios';
 
 import './Estimate.scss';
 
-const Estimate = ({ planets, ships, isLogged }) => {
+const Estimate = ({ planets, ships, isLogged, userEmail }) => {
   const [travelersInput, setTravelersInput] = useState('');
   const [dateInput, setDateInput] = useState('');
   const [planetInput, setPlanetInput] = useState('');
@@ -18,8 +18,7 @@ const Estimate = ({ planets, ships, isLogged }) => {
       departure_date: dateInput,
       planet_id: planetInput,
       ship_id: shipInput,
-      // A dynamiser quand la connexion sera dispo
-      email: 'nathanael.fournier@oclock.school',
+      email: userEmail,
       status: 'En cours de validation',
     });
   };
@@ -27,7 +26,7 @@ const Estimate = ({ planets, ships, isLogged }) => {
   const submitForm = (event) => {
     event.preventDefault();
     createTrip();
-    // Temporaire
+    // Temporaire ?
     setTravelersInput('');
     setDateInput('');
     setPlanetInput('');
@@ -130,6 +129,7 @@ Estimate.propTypes = {
     })
   ).isRequired,
   isLogged: propTypes.bool.isRequired,
+  userEmail: propTypes.string.isRequired,
 };
 
 export default Estimate;

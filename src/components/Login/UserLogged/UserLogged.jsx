@@ -4,11 +4,17 @@ import propTypes from 'prop-types';
 
 import './UserLogged.scss';
 
-const UserLogged = ({ setIsLogged, setSettingsIsOpen, setUserJWT }) => {
+const UserLogged = ({
+  setIsLogged,
+  setSettingsIsOpen,
+  setUserJWT,
+  setUserEmail,
+}) => {
   const handleLogout = () => {
     setIsLogged(false);
     setSettingsIsOpen(false);
     setUserJWT('');
+    setUserEmail('');
   };
 
   return (
@@ -32,6 +38,7 @@ UserLogged.propTypes = {
   setIsLogged: propTypes.func.isRequired,
   setSettingsIsOpen: propTypes.func.isRequired,
   setUserJWT: propTypes.func.isRequired,
+  setUserEmail: propTypes.func.isRequired,
 };
 
 export default UserLogged;

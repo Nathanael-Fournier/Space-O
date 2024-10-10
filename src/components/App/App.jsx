@@ -28,6 +28,7 @@ function App() {
   const [settingsIsOpen, setSettingsIsOpen] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
   const [userJWT, setUserJWT] = useState('');
+  const [userEmail, setUserEmail] = useState('');
 
   const loadShips = () => {
     axios
@@ -71,6 +72,7 @@ function App() {
           setIsLogged={setIsLogged}
           setSettingsIsOpen={setSettingsIsOpen}
           setUserJWT={setUserJWT}
+          setUserEmail={setUserEmail}
         />
       )}
       <Routes>
@@ -91,7 +93,12 @@ function App() {
         <Route
           path="/devis"
           element={
-            <Estimate planets={planets} ships={ships} isLogged={isLogged} />
+            <Estimate
+              planets={planets}
+              ships={ships}
+              isLogged={isLogged}
+              userEmail={userEmail}
+            />
           }
         />
         <Route

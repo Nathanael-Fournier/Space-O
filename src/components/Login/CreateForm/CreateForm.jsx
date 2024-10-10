@@ -126,8 +126,8 @@ const CreateForm = ({
         </label>
         <input
           required
-          pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
-          title="1 chiffre, 1 lettre et 8 caractères minimums"
+          // pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$"
+          // title="1 chiffre, 1 lettre et 8 caractères minimums"
           className="createform-form-input"
           type="password"
           placeholder="ex: Secret Spatial"

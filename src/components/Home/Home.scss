@@ -63,10 +63,10 @@ SOUS-COMPOSANT HOMEPARTS.JSX
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 2px v.$whiteColor;
+  border: solid 1px v.$whiteColor;
   color: v.$whiteColor;
-  font-family: v.$secondaryFont;
-  font-size: 0.8rem;
+  font-family: v.$mainFont;
+  font-size: 0.7rem;
   background-color: v.$color1;
   width: 10rem;
   height: 2.5rem;
@@ -110,6 +110,7 @@ RESPONSIVE
   .home-button {
     width: 12rem;
     height: 3rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -161,7 +162,6 @@ RESPONSIVE
     margin-top: 2.5rem;
     border-radius: 30px;
     font-size: v.$homeFontSize;
-    font-weight: 500;
     transition: 0.2s;
   }
 
