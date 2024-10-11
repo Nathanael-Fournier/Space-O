@@ -32,7 +32,7 @@ COMPOSANT FORMSUBMIT
   color: v.$greyTextColor;
   font-family: v.$secondaryFont;
   font-size: 1rem;
-  margin: 0 1rem;
+  margin: 0 1rem 1rem 1rem;
   text-align: center;
 }
 
@@ -42,7 +42,6 @@ COMPOSANT FORMSUBMIT
   background-color: v.$color3;
   border: solid 2px v.$orangeColor;
   border-radius: 0.5rem;
-  margin: 1rem auto;
   width: 7rem;
   height: 2.5rem;
   padding: 0.5rem;
@@ -51,4 +50,115 @@ COMPOSANT FORMSUBMIT
   align-items: center;
   justify-content: center;
 }
+}
+
+/*
+RESPONSIVE
+*/
+
+@media (min-width: 480px) {
+  .form-submit-content {
+    width: 26rem;
+    margin: 2rem auto;
+  
+  .form-submit-title {
+    font-size: 1.6rem;
+  }
+  
+  .form-submit-text {
+    margin: 0 3rem 1rem 3rem;
+  }
+  
+  .form-submit-link {
+    width: 7.5rem;
+  }
+  }
+}
+
+
+@media (min-width: 768px) {
+  .form-submit-content {
+    width: 35rem;  
+    margin: 2.5rem auto;
+  
+  .form-submit-title {
+    font-size: 1.7rem;
+    margin: 0 4rem;
+  }
+  
+  .form-submit-text {
+    font-size: 1.1rem;
+    margin: 0 4rem 1rem 4rem;
+  }
+  
+  .form-submit-link {
+    width: 8rem;
+    height: 3rem;
+  }
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-submit-content {
+    width: 40rem;  
+    margin: 3rem auto;
+  
+  .form-submit-title {
+    font-size: 1.8rem;
+  }
+  
+  .form-submit-text {
+    font-size: 1.2rem;
+    margin: 0 4.5rem 1rem 4.5rem;
+  }
+  
+  .form-submit-link {
+    width: 9rem;
+    height: 3.5rem;
+    font-size: 0.9rem;
+  }
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-submit-content {
+    width: 50rem;  
+  
+  .form-submit-title {
+    font-size: 1.9rem;
+  }
+  
+  .form-submit-text {
+    font-size: 1.3rem;
+    margin: 0 5rem 1rem 5rem;
+  }
+  
+  .form-submit-link {
+    width: 10rem;
+    height: 4rem;
+    font-size: 1rem;
+  }
+  }
+}
+
+@media (min-width: 1440px) {
+  .form-submit-content {
+    width: 60rem;
+  
+  .form-submit-title {
+    font-size: 2rem;
+    margin: 0 6rem;
+  }
+  
+  .form-submit-text {
+    font-size: 1.4rem;
+    margin: 0 6rem 1rem 6rem;
+  }
+  
+  .form-submit-link {
+    width: 10rem;
+    height: 4rem;
+    font-size: 1.1rem;
+  }
+  }
 }
