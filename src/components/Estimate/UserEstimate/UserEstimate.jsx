@@ -29,11 +29,12 @@ const UserEstimate = ({ userJWT, isLogged }) => {
       {trips.length === 0 ? (
         <h1 className="user-estimate-title">Vous n'avez pas encore de devis</h1>
       ) : (
-        (<h1 className="user-estimate-title">Mes devis</h1>)(
-          trips.map((currentTrip) => (
+        <>
+          <h1 className="user-estimate-title">Mes devis</h1>
+          {trips.map((currentTrip) => (
             <EachEstimate key={currentTrip.id} {...currentTrip} />
-          ))
-        )
+          ))}
+        </>
       )}
     </div>
   ) : (
