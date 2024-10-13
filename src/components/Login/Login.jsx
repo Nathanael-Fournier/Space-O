@@ -5,6 +5,7 @@ import propTypes from 'prop-types';
 import LoginForm from './LoginForm/LoginForm';
 import CreateForm from './CreateForm/CreateForm';
 import UserLogged from './UserLogged/UserLogged';
+import FlashMessage from '../FlashMessage/FlashMessage';
 
 import './Login.scss';
 
@@ -17,6 +18,7 @@ const Login = ({
 }) => {
   const [loginFormIsOpen, setLoginFormIsOpen] = useState(true);
   const [createFormIsOpen, setCreateFormIsOpen] = useState(false);
+  const [flashMessageIsOpen, setFlashMessageIsOpen] = useState(false);
 
   return (
     <>
@@ -32,9 +34,9 @@ const Login = ({
       )}
       {createFormIsOpen && !isLogged && (
         <CreateForm
-          setSettingsIsOpen={setSettingsIsOpen}
           setLoginFormIsOpen={setLoginFormIsOpen}
           setCreateFormIsOpen={setCreateFormIsOpen}
+          setFlashMessageIsOpen={setFlashMessageIsOpen}
         />
       )}
       {isLogged && (
@@ -45,6 +47,15 @@ const Login = ({
           setUserEmail={setUserEmail}
         />
       )}
+      {flashMessageIsOpen &&
+        !isLogged &&
+        !loginFormIsOpen &&
+        !createFormIsOpen && (
+          <FlashMessage
+            text="Compte crée avec succès"
+            setSettingsIsOpen={setSettingsIsOpen}
+          />
+        )}
     </>
   );
 };

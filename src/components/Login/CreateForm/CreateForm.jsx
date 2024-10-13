@@ -5,9 +5,9 @@ import './CreateForm.scss';
 import { useState } from 'react';
 
 const CreateForm = ({
-  setSettingsIsOpen,
   setLoginFormIsOpen,
   setCreateFormIsOpen,
+  setFlashMessageIsOpen,
 }) => {
   const [createLastnameValue, setCreateLastnameValue] = useState('');
   const [createFirstnameValue, setCreateFirstnameValue] = useState('');
@@ -26,7 +26,8 @@ const CreateForm = ({
         phone_number: createPhoneNumberValue,
       })
       .then(() => {
-        setSettingsIsOpen(false);
+        setCreateFormIsOpen(false);
+        setFlashMessageIsOpen(true);
       });
   };
 
@@ -146,9 +147,9 @@ const CreateForm = ({
 };
 
 CreateForm.propTypes = {
-  setSettingsIsOpen: propTypes.func.isRequired,
   setLoginFormIsOpen: propTypes.func.isRequired,
   setCreateFormIsOpen: propTypes.func.isRequired,
+  setFlashMessageIsOpen: propTypes.func.isRequired,
 };
 
 export default CreateForm;

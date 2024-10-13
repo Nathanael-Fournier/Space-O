@@ -7,9 +7,7 @@
 
 - Interaction
   . Une interaction quand le MDP est mauvais
-  . Une interaction quand on soumet le formulaire de devis
-  . Une interaction quand on soumet le formulaire de création de compte
-  . Une interaction qui nous fait comprendre qu'on s'est connecté
+  . Une interaction qui nous fait comprendre qu'on s'est connecté ( affichage conditionnel sur l'onglet de la navbar )
 
 ## Pourquoi pas
 

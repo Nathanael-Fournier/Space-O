@@ -1,0 +1,32 @@
+@use '../../styles/variables' as v;
+
+/*
+COMPOSANT FLASHMESSAGE
+*/
+
+.flash-message-content {
+  background: v.$orangeColor;
+  border: 1px solid v.$greyTextColor;
+  border-radius: 5px;
+  position: fixed;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+  width: 8rem;
+  height: 3.5rem;
+
+.flash-message-text {
+  text-align: center;
+  color: v.$whiteColor;
+  font-family: v.$secondaryFont;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+}
+
+/*
+RESPONSIVE
+*/
