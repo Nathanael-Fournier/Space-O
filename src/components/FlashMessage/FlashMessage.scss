@@ -30,3 +30,47 @@ COMPOSANT FLASHMESSAGE
 /*
 RESPONSIVE
 */
+
+@media (min-width: 480px) {
+  .flash-message-content {
+    width: 8.5rem;
+    height: 4rem;
+  
+  .flash-message-text {
+    font-size: 0.9rem;
+  }
+  }
+}
+
+@media (min-width: 768px) {
+  .flash-message-content {
+    width: 9rem;
+    height: 4.5rem;
+  
+  .flash-message-text {
+    font-size: 1rem;
+  }
+  }
+}
+
+@media (min-width: 1024px) {
+  .flash-message-content {
+    width: 10rem;
+    height: 5rem;
+  
+  .flash-message-text {
+    font-size: 1.1rem;
+  }
+  }
+}
+
+@media (min-width: 1200px) {
+  .flash-message-content {
+    width: 11rem;
+    height: 5.5rem;
+  
+  .flash-message-text {
+    font-size: 1.2rem;
+  }
+  }
+}
