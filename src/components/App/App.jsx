@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
+import { API_BASE_URL } from '../../utils/config';
+
 import './App.scss';
 
 import Navbar from '../Navbar/Navbar';
@@ -32,7 +34,7 @@ function App() {
 
   const loadShips = () => {
     axios
-      .get('http://localhost:8000/api/v1/ship')
+      .get(`${API_BASE_URL}/api/v1/ship`)
       .then((response) => {
         setShips(response.data);
       })
@@ -43,7 +45,7 @@ function App() {
 
   const loadPlanets = () => {
     axios
-      .get('http://localhost:8000/api/v1/planet')
+      .get(`${API_BASE_URL}/api/v1/planet`)
       .then((response) => {
         setPlanets(response.data);
       })

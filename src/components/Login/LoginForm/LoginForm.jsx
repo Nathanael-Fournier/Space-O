@@ -3,6 +3,8 @@ import { useState } from 'react';
 import propTypes from 'prop-types';
 import axios from 'axios';
 
+import { API_BASE_URL } from '../../../utils/config';
+
 import './LoginForm.scss';
 
 const LoginForm = ({
@@ -18,7 +20,7 @@ const LoginForm = ({
 
   const saveUserToken = () => {
     axios
-      .post('http://localhost:8000/api/login_check', {
+      .post(`${API_BASE_URL}/api/login_check`, {
         username: loginEmailValue,
         password: loginPasswordValue,
       })

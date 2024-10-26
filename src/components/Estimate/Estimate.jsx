@@ -5,6 +5,8 @@ import propTypes from 'prop-types';
 
 import axios from 'axios';
 
+import { API_BASE_URL } from '../../utils/config';
+
 import FormSubmit from './FormSubmit/FormSubmit';
 
 import './Estimate.scss';
@@ -20,7 +22,7 @@ const Estimate = ({ planets, ships, isLogged, userEmail }) => {
 
   // Créer le devis en BDD
   const createTrip = () => {
-    axios.post('http://localhost:8000/api/v1/trip', {
+    axios.post(`${API_BASE_URL}/api/v1/trip`, {
       traveler_number: travelersInput,
       departure_date: dateInput,
       planet_id: planetInput,
