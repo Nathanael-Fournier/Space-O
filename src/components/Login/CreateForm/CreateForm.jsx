@@ -1,8 +1,11 @@
+import { useState } from 'react';
+
 import propTypes from 'prop-types';
 import axios from 'axios';
 
+import { API_BASE_URL } from '../../../utils/config';
+
 import './CreateForm.scss';
-import { useState } from 'react';
 
 const CreateForm = ({
   setLoginFormIsOpen,
@@ -17,7 +20,7 @@ const CreateForm = ({
 
   const createUser = () => {
     axios
-      .post('http://localhost:8000/api/v1/user', {
+      .post(`${API_BASE_URL}/api/v1/user`, {
         email: createEmailValue,
         roles: ['ROLE_USER'],
         password: createPasswordValue,

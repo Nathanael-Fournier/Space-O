@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
+import { API_BASE_URL } from '../../utils/config';
+
 import Spinner from '../Spinner/Spinner';
 
 import './PilotDetail.scss';
@@ -19,7 +21,7 @@ const PilotDetail = () => {
 
   const loadPilots = () => {
     axios
-      .get('http://localhost:8000/api/v1/pilot')
+      .get(`${API_BASE_URL}/api/v1/pilot`)
       .then((response) => {
         setPilots(response.data);
       })

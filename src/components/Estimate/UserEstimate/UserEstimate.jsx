@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 import axios from 'axios';
 
+import { API_BASE_URL } from '../../../utils/config';
+
 import EachEstimate from './EachEstimate';
 
 import './UserEstimate.scss';
@@ -14,7 +16,7 @@ const UserEstimate = ({ userJWT, isLogged }) => {
   useEffect(() => {
     const loadTrips = () => {
       axios
-        .get('http://localhost:8000/api/v1/trip', {
+        .get(`${API_BASE_URL}/api/v1/trip`, {
           headers: { Authorization: `Bearer ${userJWT}` },
         })
         .then((response) => {
