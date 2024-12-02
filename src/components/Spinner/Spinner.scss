@@ -1,11 +1,22 @@
 @use '../../styles/variables' as v;
 
-.spinner {
-  width: 50px;
-  height: 50px;
-  background-color: v.$orangeColor;
-  margin: v.$homeFontSize auto;
-  animation: rotateplane 3s infinite alternate ease-in-out;
+/*
+  SPINNER
+*/
+
+.spinner-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .spinner {
+    width: 100px;
+    height: 100px;
+    background-color: v.$orangeColor;
+    margin: v.$homeFontSize auto;
+    animation: rotateplane 1.5s infinite alternate ease-in-out;
+  }
 }
 
 @keyframes rotateplane {

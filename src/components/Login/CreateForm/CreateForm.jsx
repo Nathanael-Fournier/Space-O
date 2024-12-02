@@ -22,7 +22,6 @@ const CreateForm = ({
     axios
       .post(`${API_BASE_URL}/api/v1/user`, {
         email: createEmailValue,
-        roles: ['ROLE_USER'],
         password: createPasswordValue,
         firstname: createFirstnameValue,
         lastname: createLastnameValue,

@@ -1,5 +1,11 @@
 import './Spinner.scss';
 
-const Spinner = () => <div className="spinner" />;
+const Spinner = () => {
+  return (
+    <div className="spinner-content">
+      <div className="spinner" />
+    </div>
+  );
+};
 
 export default Spinner;

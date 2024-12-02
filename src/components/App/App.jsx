@@ -1,9 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-
-import axios from 'axios';
-
-import { API_BASE_URL } from '../../utils/config';
+import { useState } from 'react';
 
 import './App.scss';
 
@@ -32,33 +28,6 @@ function App() {
   const [userJWT, setUserJWT] = useState('');
   const [userEmail, setUserEmail] = useState('');
 
-  const loadShips = () => {
-    axios
-      .get(`${API_BASE_URL}/api/v1/ship`)
-      .then((response) => {
-        setShips(response.data);
-      })
-      .finally(() => {
-        setLoadingShips(false);
-      });
-  };
-
-  const loadPlanets = () => {
-    axios
-      .get(`${API_BASE_URL}/api/v1/planet`)
-      .then((response) => {
-        setPlanets(response.data);
-      })
-      .finally(() => {
-        setLoadingPlanets(false);
-      });
-  };
-
-  useEffect(() => {
-    loadShips();
-    loadPlanets();
-  }, []);
-
   useScrollAuto();
 
   return (
@@ -79,14 +48,34 @@ function App() {
       )}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/planetes" element={<Planet planets={planets} />} />
+        <Route
+          path="/planetes"
+          element={
+            <Planet
+              planets={planets}
+              setPlanets={setPlanets}
+              loadingPlanets={loadingPlanets}
+              setLoadingPlanets={setLoadingPlanets}
+            />
+          }
+        />
         <Route
           path="/planetes/:slug"
           element={
             <PlanetDetail planets={planets} loadingPlanets={loadingPlanets} />
           }
         />
-        <Route path="/vaisseaux" element={<Ship ships={ships} />} />
+        <Route
+          path="/vaisseaux"
+          element={
+            <Ship
+              ships={ships}
+              setShips={setShips}
+              loadingShips={loadingShips}
+              setLoadingShips={setLoadingShips}
+            />
+          }
+        />
         <Route
           path="/vaisseaux/:slug"
           element={<ShipDetail ships={ships} loadingShips={loadingShips} />}

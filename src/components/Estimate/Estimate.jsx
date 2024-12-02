@@ -28,7 +28,6 @@ const Estimate = ({ planets, ships, isLogged, userEmail }) => {
       planet_id: planetInput,
       ship_id: shipInput,
       email: userEmail,
-      status: 'En cours de validation',
     });
   };
 
