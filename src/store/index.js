@@ -5,9 +5,10 @@ import reducer from '../reducers/index';
 
 import planetsMiddleware from '../middlewares/planetsMiddleware';
 import shipsMiddleware from '../middlewares/shipsMiddleware';
+import pilotsMiddleware from '../middlewares/pilotsMiddleware';
 
 const enhancers = composeWithDevTools(
-  applyMiddleware(planetsMiddleware, shipsMiddleware)
+  applyMiddleware(planetsMiddleware, shipsMiddleware, pilotsMiddleware)
 );
 
 const store = createStore(reducer, enhancers);

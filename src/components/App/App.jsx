@@ -1,3 +1,5 @@
+// TODO --> Stocker les messages d'erreur et les stocker dans le state
+
 import { Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 
