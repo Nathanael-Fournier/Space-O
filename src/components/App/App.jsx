@@ -20,9 +20,7 @@ import useScrollAuto from '../../utils/useScrollAuto';
 
 function App() {
   const [ships, setShips] = useState([]);
-  const [planets, setPlanets] = useState([]);
   const [loadingShips, setLoadingShips] = useState(true);
-  const [loadingPlanets, setLoadingPlanets] = useState(true);
   const [settingsIsOpen, setSettingsIsOpen] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
   const [userJWT, setUserJWT] = useState('');
@@ -48,23 +46,8 @@ function App() {
       )}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/planetes"
-          element={
-            <Planet
-              planets={planets}
-              setPlanets={setPlanets}
-              loadingPlanets={loadingPlanets}
-              setLoadingPlanets={setLoadingPlanets}
-            />
-          }
-        />
-        <Route
-          path="/planetes/:slug"
-          element={
-            <PlanetDetail planets={planets} loadingPlanets={loadingPlanets} />
-          }
-        />
+        <Route path="/planetes" element={<Planet />} />
+        <Route path="/planetes/:slug" element={<PlanetDetail />} />
         <Route
           path="/vaisseaux"
           element={
@@ -84,12 +67,7 @@ function App() {
         <Route
           path="/devis"
           element={
-            <Estimate
-              planets={planets}
-              ships={ships}
-              isLogged={isLogged}
-              userEmail={userEmail}
-            />
+            <Estimate ships={ships} isLogged={isLogged} userEmail={userEmail} />
           }
         />
         <Route
