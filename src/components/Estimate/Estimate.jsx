@@ -9,12 +9,13 @@ import axios from 'axios';
 import { API_BASE_URL } from '../../utils/config';
 
 import { fetchPlanets } from '../../actions/planets';
+import { fetchShips } from '../../actions/ships';
 
 import FormSubmit from './FormSubmit/FormSubmit';
 
 import './Estimate.scss';
 
-const Estimate = ({ ships, isLogged, userEmail }) => {
+const Estimate = ({ isLogged, userEmail }) => {
   // Utilisation du dispatch
   const dispatch = useDispatch();
   // Le state des inputs / selects
@@ -26,6 +27,7 @@ const Estimate = ({ ships, isLogged, userEmail }) => {
   const [formIsSubmit, setFormIsSubmit] = useState(false);
   // Récupération des planètes
   const planets = useSelector((state) => state.planets.planetsList);
+  const ships = useSelector((state) => state.ships.shipsList);
 
   // Créer le devis en BDD
   const createTrip = () => {
@@ -54,6 +56,12 @@ const Estimate = ({ ships, isLogged, userEmail }) => {
       dispatch(fetchPlanets());
     }
   }, [dispatch, planets]);
+
+  useEffect(() => {
+    if (!ships || ships.length === 0) {
+      dispatch(fetchShips());
+    }
+  }, [dispatch, ships]);
 
   // Récupère l'url
   const location = useLocation();
@@ -157,11 +165,6 @@ const Estimate = ({ ships, isLogged, userEmail }) => {
 };
 
 Estimate.propTypes = {
-  ships: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.number.isRequired,
-    })
-  ).isRequired,
   isLogged: propTypes.bool.isRequired,
   userEmail: propTypes.string.isRequired,
 };

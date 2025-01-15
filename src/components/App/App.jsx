@@ -19,8 +19,6 @@ import Footer from '../Footer/Footer';
 import useScrollAuto from '../../utils/useScrollAuto';
 
 function App() {
-  const [ships, setShips] = useState([]);
-  const [loadingShips, setLoadingShips] = useState(true);
   const [settingsIsOpen, setSettingsIsOpen] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
   const [userJWT, setUserJWT] = useState('');
@@ -48,27 +46,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/planetes" element={<Planet />} />
         <Route path="/planetes/:slug" element={<PlanetDetail />} />
-        <Route
-          path="/vaisseaux"
-          element={
-            <Ship
-              ships={ships}
-              setShips={setShips}
-              loadingShips={loadingShips}
-              setLoadingShips={setLoadingShips}
-            />
-          }
-        />
-        <Route
-          path="/vaisseaux/:slug"
-          element={<ShipDetail ships={ships} loadingShips={loadingShips} />}
-        />
+        <Route path="/vaisseaux" element={<Ship />} />
+        <Route path="/vaisseaux/:slug" element={<ShipDetail />} />
         <Route path="/pilotes/:slug" element={<PilotDetail />} />
         <Route
           path="/devis"
-          element={
-            <Estimate ships={ships} isLogged={isLogged} userEmail={userEmail} />
-          }
+          element={<Estimate isLogged={isLogged} userEmail={userEmail} />}
         />
         <Route
           path="/mes-devis"

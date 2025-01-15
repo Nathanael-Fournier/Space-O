@@ -1,37 +1,23 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-import propTypes from 'prop-types';
-import axios from 'axios';
-
-import { API_BASE_URL } from '../../utils/config';
+import { fetchShips } from '../../actions/ships';
 
 import Spinner from '../Spinner/Spinner';
 import ShipCard from './ShipCard';
 
 import './Ship.scss';
 
-const Ship = ({ ships, setShips, loadingShips, setLoadingShips }) => {
-  useEffect(() => {
-    const loadShips = () => {
-      const savedShips = sessionStorage.getItem('ships');
-      if (savedShips) {
-        setShips(JSON.parse(savedShips));
-        setLoadingShips(false);
-      } else {
-        axios
-          .get(`${API_BASE_URL}/api/v1/ship`)
-          .then((response) => {
-            setShips(response.data);
-            sessionStorage.setItem('ships', JSON.stringify(response.data));
-          })
-          .finally(() => {
-            setLoadingShips(false);
-          });
-      }
-    };
+const Ship = () => {
+  const dispatch = useDispatch();
+  const ships = useSelector((state) => state.ships.shipsList);
+  const loadingShips = useSelector((state) => state.ships.loadingShips);
 
-    loadShips();
-  }, [setShips, setLoadingShips]);
+  useEffect(() => {
+    if (!ships || ships.length === 0) {
+      dispatch(fetchShips());
+    }
+  }, [dispatch, ships]);
 
   return loadingShips ? (
     <Spinner />
@@ -47,17 +33,6 @@ const Ship = ({ ships, setShips, loadingShips, setLoadingShips }) => {
       </div>
     </>
   );
-};
-
-Ship.propTypes = {
-  ships: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.number.isRequired,
-    })
-  ).isRequired,
-  setShips: propTypes.func.isRequired,
-  loadingShips: propTypes.bool.isRequired,
-  setLoadingShips: propTypes.func.isRequired,
 };
 
 export default Ship;
