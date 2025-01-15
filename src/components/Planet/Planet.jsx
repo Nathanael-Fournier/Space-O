@@ -1,30 +1,23 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-import propTypes from 'prop-types';
-import axios from 'axios';
-
-import { API_BASE_URL } from '../../utils/config';
+import { fetchPlanets } from '../../actions/planets';
 
 import Spinner from '../Spinner/Spinner';
 import PlanetCard from './PlanetCard';
 
 import './Planet.scss';
 
-const Planet = ({ planets, setPlanets, loadingPlanets, setLoadingPlanets }) => {
-  useEffect(() => {
-    const loadPlanets = () => {
-      axios
-        .get(`${API_BASE_URL}/api/v1/planet`)
-        .then((response) => {
-          setPlanets(response.data);
-        })
-        .finally(() => {
-          setLoadingPlanets(false);
-        });
-    };
+const Planet = () => {
+  const dispatch = useDispatch();
+  const planets = useSelector((state) => state.planets.planetsList);
+  const loadingPlanets = useSelector((state) => state.planets.loadingPlanets);
 
-    loadPlanets();
-  }, [setPlanets, setLoadingPlanets]);
+  useEffect(() => {
+    if (!planets || planets.length === 0) {
+      dispatch(fetchPlanets());
+    }
+  }, [dispatch, planets]);
 
   return loadingPlanets ? (
     <Spinner />
@@ -40,17 +33,6 @@ const Planet = ({ planets, setPlanets, loadingPlanets, setLoadingPlanets }) => {
       </div>
     </>
   );
-};
-
-Planet.propTypes = {
-  planets: propTypes.arrayOf(
-    propTypes.shape({
-      id: propTypes.number.isRequired,
-    })
-  ).isRequired,
-  setPlanets: propTypes.func.isRequired,
-  loadingPlanets: propTypes.bool.isRequired,
-  setLoadingPlanets: propTypes.func.isRequired,
 };
 
 export default Planet;

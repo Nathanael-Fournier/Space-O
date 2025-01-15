@@ -10,7 +10,6 @@ import Spinner from '../Spinner/Spinner';
 import './PlanetDetail.scss';
 
 const PlanetDetail = () => {
-  console.log('Rendu de PlanetDetail');
   const dispatch = useDispatch();
   const planetDetail = useSelector((state) => state.planets.planetDetail);
   const loadingPlanetDetail = useSelector(
@@ -19,7 +18,6 @@ const PlanetDetail = () => {
   const { slug } = useParams();
 
   useEffect(() => {
-    // Dispatch de l'action pour récupérer les planètes
     dispatch(fetchPlanetDetail(slug));
   }, [dispatch, slug]);
 
