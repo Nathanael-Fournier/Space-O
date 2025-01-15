@@ -1,8 +1,10 @@
-import { SAVE_PLANETS } from '../actions/planets';
+import { SAVE_PLANETS, SAVE_PLANET_DETAIL } from '../actions/planets';
 
 const initialState = {
   planetsList: [],
   loadingPlanets: true,
+  planetDetail: [],
+  loadingPlanetDetail: true,
 };
 
 const planetsReducer = (state = initialState, action = {}) => {
@@ -12,6 +14,12 @@ const planetsReducer = (state = initialState, action = {}) => {
         ...state,
         planetsList: action.planetsAction,
         loadingPlanets: false,
+      };
+    case SAVE_PLANET_DETAIL:
+      return {
+        ...state,
+        planetDetail: action.planetDetailAction,
+        loadingPlanetDetail: false,
       };
 
     default:
