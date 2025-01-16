@@ -1,7 +1,7 @@
 // TODO --> Stocker les messages d'erreur et les stocker dans le state
 
 import { Route, Routes } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import './App.scss';
 
@@ -22,9 +22,28 @@ import useScrollAuto from '../../utils/useScrollAuto';
 
 function App() {
   const [settingsIsOpen, setSettingsIsOpen] = useState(false);
-  const [isLogged, setIsLogged] = useState(false);
-  const [userJWT, setUserJWT] = useState('');
-  const [userEmail, setUserEmail] = useState('');
+
+  const [isLogged, setIsLogged] = useState(
+    () => localStorage.getItem('isLogged') === 'true'
+  );
+  const [userJWT, setUserJWT] = useState(
+    () => localStorage.getItem('userJWT') || ''
+  );
+  const [userEmail, setUserEmail] = useState(
+    () => localStorage.getItem('userEmail') || ''
+  );
+
+  useEffect(() => {
+    localStorage.setItem('isLogged', isLogged);
+  }, [isLogged]);
+
+  useEffect(() => {
+    localStorage.setItem('userJWT', userJWT);
+  }, [userJWT]);
+
+  useEffect(() => {
+    localStorage.setItem('userEmail', userEmail);
+  }, [userEmail]);
 
   useScrollAuto();
 
