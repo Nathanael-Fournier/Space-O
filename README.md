@@ -1,9 +1,14 @@
 # Space-O
 
-## A faire
+## A faire lorsque l'on clone le projet
 
-- RESPONSIVE
-  . Toujours vérifier si tout est correct
+- Entrer la commande 'npm install' à la racine du projet
+
+- Dans src/utils —> réécrire l’URL du back dans 'config.js' si le back n'est pas lancé sur 'localhost:8000'
+
+- Si besoin d'envoyer en production --> Entrer la commande 'npm run build'
+
+### A terminer
 
 - Interaction
   . Une interaction quand le MDP est mauvais
@@ -11,9 +16,9 @@
 
 ## Pourquoi pas
 
-- Une page d'accueil avec la video du vaisseau avec un lien qui amenerait sur la page de présentation ( voir le code dans "Bordel")
+- Une page d'accueil avec la video du vaisseau avec un lien qui amenerait sur la page de présentation ( voir le code plus bas )
 
-### Bordel
+- Récuperer les données de l'utilisateur pour lui faire une page de profil
 
 #### Le code du composant d'une éventuelle page d'accueil avec une vidéo
 
@@ -30,7 +35,7 @@
         décollage <br />?
       </h1>
 
-// AFFICHER UN BOUTON QUI EMMENE SUR LA PAGE D'ACCUEIL
+// TODO --> AFFICHER UN BOUTON QUI EMMENE SUR LA PAGE D'ACCUEIL
 ```
 
 #### Le code du CSS du composant
@@ -53,20 +58,4 @@
   font-size: calc(v.$homeFontSize * 2);
   text-align: center;
 }
-```
-
-#### Recuperation des données de l'utilisateur
-
-```jsx
-// OU PLACER CA ET QUAND RECUPERER SES DONNEES ET LES RETRANSMETTRE PLUS TARD
-
-  const saveUserData = () => {
-    axios
-      .get('http://localhost:8000/api/v1/login', {
-        headers: { Authorization: `Bearer ${userJWT}` },
-      })
-      .then((response) => {
-        setUserData(response.data);
-      });
-  };
 ```
