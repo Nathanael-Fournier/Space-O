@@ -18,7 +18,7 @@ import Login from '../Login/Login';
 import Error from '../Error/Error';
 import Footer from '../Footer/Footer';
 
-import useScrollAuto from '../../utils/useScrollAuto';
+import useScrollAuto from '../../hooks/useScrollAuto';
 
 function App() {
   const [settingsIsOpen, setSettingsIsOpen] = useState(false);
