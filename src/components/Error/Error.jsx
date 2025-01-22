@@ -1,5 +1,7 @@
+// Importation du fichier de styles SCSS spécifique au composant Error.
 import './Error.scss';
 
+// Déclaration du composant Error.
 const Error = () => {
   return (
     <div className="error">
@@ -8,4 +10,5 @@ const Error = () => {
   );
 };
 
+// Exportation du composant.
 export default Error;
