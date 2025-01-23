@@ -1,26 +1,34 @@
 /* eslint-disable react/no-unescaped-entities */
+// Permet de récupèrer les paramètres de l'URL
 import { useParams } from 'react-router-dom';
+// useDispatch permet de déclencher des actions Redux, useSelector permet d'extraire des données du store Redux
 import { useDispatch, useSelector } from 'react-redux';
+// useEffect est utilisé pour effectuer des effets secondaires lors du montage du composant
 import { useEffect } from 'react';
 
+// Import de l'action Redux pour récupérer les détails de la planète
 import { fetchPlanetDetail } from '../../actions/planets';
 
+// Import du composant Spinner qui affiche un indicateur de chargement
 import Spinner from '../Spinner/Spinner';
 
+// Import du fichier de style SCSS pour ce composant
 import './PlanetDetail.scss';
 
+// Définition du composant PlanetDetail
 const PlanetDetail = () => {
-  const dispatch = useDispatch();
-  const planetDetail = useSelector((state) => state.planets.planetDetail);
+  const dispatch = useDispatch(); // Dispatch pour envoyer des actions Redux
+  const planetDetail = useSelector((state) => state.planets.planetDetail); // Sélectionne les détails de la planète depuis le store Redux
   const loadingPlanetDetail = useSelector(
-    (state) => state.planets.loadingPlanetDetail
+    (state) => state.planets.loadingPlanetDetail // Sélectionne l'état de chargement des détails de la planète
   );
-  const { slug } = useParams();
+  const { slug } = useParams(); // Récupère le slug (identifiant unique de la planète) depuis l'URL
 
   useEffect(() => {
-    dispatch(fetchPlanetDetail(slug));
-  }, [dispatch, slug]);
+    dispatch(fetchPlanetDetail(slug)); // Envoi de l'action pour récupérer les détails de la planète en utilisant le slug
+  }, [dispatch, slug]); // Re-exécute l'effet si `dispatch` ou `slug` change
 
+  // Si les détails de la planète sont en cours de chargement, on affiche un Spinner
   if (loadingPlanetDetail === true) {
     return <Spinner />;
   }
@@ -80,4 +88,5 @@ const PlanetDetail = () => {
   );
 };
 
+// Export du composant
 export default PlanetDetail;

@@ -1,26 +1,34 @@
 /* eslint-disable react/no-unescaped-entities */
+// Link permet de créer des liens de navigation entre les pages, useParams récupère les paramètres de l'URL
 import { Link, useParams } from 'react-router-dom';
+// useDispatch permet de déclencher des actions Redux, useSelector permet d'extraire des données du store Redux
 import { useDispatch, useSelector } from 'react-redux';
+// useEffect est utilisé pour effectuer des effets secondaires lors du montage du composant
 import { useEffect } from 'react';
 
+// Import de l'action Redux pour récupérer les détails du vaisseau
 import { fetchShipDetail } from '../../actions/ships';
 
+// Import du composant Spinner qui affiche un indicateur de chargement
 import Spinner from '../Spinner/Spinner';
 
+// Import du fichier de style SCSS pour ce composant
 import './ShipDetail.scss';
 
+// Définition du composant ShipDetail
 const ShipDetail = () => {
-  const dispatch = useDispatch();
-  const shipDetail = useSelector((state) => state.ships.shipDetail);
+  const dispatch = useDispatch(); // Dispatch pour envoyer des actions Redux
+  const shipDetail = useSelector((state) => state.ships.shipDetail); // Sélectionne les détails du vaisseau depuis le store Redux
   const loadingShipDetail = useSelector(
-    (state) => state.ships.loadingShipDetail
+    (state) => state.ships.loadingShipDetail // Sélectionne l'état de chargement des détails du vaisseau
   );
-  const { slug } = useParams();
+  const { slug } = useParams(); // Récupère le slug (identifiant unique du vaisseau) depuis l'URL
 
   useEffect(() => {
-    dispatch(fetchShipDetail(slug));
-  }, [dispatch, slug]);
+    dispatch(fetchShipDetail(slug)); // Envoi de l'action pour récupérer les détails du vaisseau en utilisant le slug
+  }, [dispatch, slug]); // Re-exécute l'effet si `dispatch` ou `slug` change
 
+  // Si les détails du vaisseau sont en cours de chargement, on affiche un Spinner
   if (loadingShipDetail === true) {
     return <Spinner />;
   }
@@ -107,4 +115,5 @@ const ShipDetail = () => {
   );
 };
 
+// Export du composant
 export default ShipDetail;
