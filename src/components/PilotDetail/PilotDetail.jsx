@@ -1,26 +1,34 @@
 /* eslint-disable react/no-unescaped-entities */
+// Permet de récupèrer les paramètres de l'URL
 import { useParams } from 'react-router-dom';
+// useDispatch permet de déclencher des actions Redux, useSelector permet d'extraire des données du store Redux
 import { useDispatch, useSelector } from 'react-redux';
+// useEffect est utilisé pour effectuer des effets secondaires lors du montage du composant
 import { useEffect } from 'react';
 
+// Import de l'action Redux pour récupérer les détails du pilote
 import { fetchPilotDetail } from '../../actions/pilots';
 
+// Import du composant Spinner qui affiche un indicateur de chargement
 import Spinner from '../Spinner/Spinner';
 
+// Import du fichier de style SCSS pour ce composant
 import './PilotDetail.scss';
 
+// Définition du composant PilotDetail
 const PilotDetail = () => {
-  const dispatch = useDispatch();
-  const pilotDetail = useSelector((state) => state.pilots.pilotDetail);
+  const dispatch = useDispatch(); // Dispatch pour envoyer des actions Redux
+  const pilotDetail = useSelector((state) => state.pilots.pilotDetail); // Sélectionne les détails du pilote depuis le store Redux
   const loadingPilotDetail = useSelector(
-    (state) => state.pilots.loadingPilotDetail
+    (state) => state.pilots.loadingPilotDetail // Sélectionne l'état de chargement des détails du pilote
   );
-  const { slug } = useParams();
+  const { slug } = useParams(); // Récupère le slug (identifiant unique du pilote) depuis l'URL
 
   useEffect(() => {
-    dispatch(fetchPilotDetail(slug));
-  }, [dispatch, slug]);
+    dispatch(fetchPilotDetail(slug)); // Envoi de l'action pour récupérer les détails du pilote en utilisant le slug
+  }, [dispatch, slug]); // Re-exécute l'effet si `dispatch` ou `slug` change
 
+  // Si les détails du pilote sont en cours de chargement, on affiche un Spinner
   if (loadingPilotDetail === true) {
     return <Spinner />;
   }
@@ -57,4 +65,5 @@ const PilotDetail = () => {
   );
 };
 
+// Export du composant
 export default PilotDetail;
